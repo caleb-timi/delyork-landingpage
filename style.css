@@ -1,12 +1,12 @@
 :root {
   --bg-black: #050505;
   --bg-darker: #000000;
-  --accent-red: #E11D48;
-  --accent-red-glow: rgba(225, 29, 72, 0.5);
-  --accent-red-light: #FB7185;
-  --accent-blood: #7F1024;
-  --accent-ember: #FF2E55;
-  --red-veil: rgba(225, 29, 72, 0.18);
+  --accent-red: #A40000;
+  --accent-red-glow: #A40000;
+  --accent-red-light: #A40000;
+  --accent-blood: #A40000;
+  --accent-ember: #A40000;
+  --red-veil: #A40000;
   --text-main: #FFFFFF;
   --text-muted: #A0A0A0;
   --glass-bg: rgba(255, 255, 255, 0.03);
@@ -146,7 +146,7 @@ body:hover .cursor-follower {
 a:hover~.custom-cursor,
 button:hover~.custom-cursor {
   transform: translate(-50%, -50%) scale(2);
-  background: rgba(225, 29, 72, 0.1);
+  background: #A40000;
   border-color: transparent;
 }
 
@@ -272,21 +272,21 @@ header {
 
 .hero {
   flex: 1;
-  min-height: calc(100vh - 90px);
+  min-height: calc(80vh - 72px);
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(360px, 0.9fr);
-  gap: clamp(3rem, 7vw, 7rem);
+  gap: clamp(2.4rem, 5.6vw, 5.6rem);
   justify-content: center;
   align-items: center;
   text-align: left;
-  padding: clamp(6rem, 10vw, 10rem) clamp(2rem, 7vw, 7rem) clamp(5rem, 8vw, 8rem);
+  padding: clamp(4.8rem, 8vw, 8rem) clamp(2rem, 7vw, 7rem) clamp(4rem, 6.4vw, 6.4rem);
   position: relative;
   overflow: hidden;
   isolation: isolate;
   background:
-    radial-gradient(circle at 78% 18%, rgba(225, 29, 72, 0.35), transparent 24rem),
-    radial-gradient(circle at 18% 80%, rgba(255, 46, 85, 0.18), transparent 24rem),
-    linear-gradient(115deg, #050505 0%, #130408 46%, #050505 100%);
+    radial-gradient(circle at 78% 18%, #A40000, transparent 24rem),
+    radial-gradient(circle at 18% 80%, #A40000, transparent 24rem),
+    linear-gradient(115deg, #050505 0%, #050505 46%, #050505 100%);
 }
 
 .hero::after {
@@ -295,7 +295,7 @@ header {
   inset: 0;
   z-index: -2;
   background:
-    linear-gradient(110deg, transparent 0 35%, rgba(225, 29, 72, 0.22) 35% 36%, transparent 36% 62%, rgba(255, 255, 255, 0.08) 62% 63%, transparent 63% 100%),
+    linear-gradient(110deg, transparent 0 35%, #A40000 35% 36%, transparent 36% 62%, rgba(255, 255, 255, 0.08) 62% 63%, transparent 63% 100%),
     repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.038) 0 1px, transparent 1px 84px);
   -webkit-mask-image: linear-gradient(to bottom, transparent, #000 20%, #000 78%, transparent);
   mask-image: linear-gradient(to bottom, transparent, #000 20%, #000 78%, transparent);
@@ -317,8 +317,8 @@ header {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(0, 0, 0, 0.94) 0%, rgba(15, 2, 5, 0.72) 42%, rgba(0, 0, 0, 0.82) 100%),
-    linear-gradient(180deg, rgba(127, 16, 36, 0.22), rgba(0, 0, 0, 0.9));
+    linear-gradient(90deg, rgba(0, 0, 0, 0.94) 0%, rgba(0, 0, 0, 0.72) 42%, rgba(0, 0, 0, 0.82) 100%),
+    linear-gradient(180deg, #A40000, rgba(0, 0, 0, 0.9));
 }
 
 .hero-backdrop img {
@@ -375,7 +375,7 @@ header {
   line-height: 0.92;
   font-weight: 700;
   max-width: 850px;
-  background: linear-gradient(110deg, #ffffff 0%, #ffd7df 34%, var(--accent-red-light) 68%, #ffffff 100%);
+  background: linear-gradient(110deg, #ffffff 0%, #ffffff 34%, var(--accent-red-light) 68%, #ffffff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -436,7 +436,7 @@ header {
 .hero-stat {
   position: absolute;
   border: 1px solid rgba(255, 255, 255, 0.18);
-  background: rgba(12, 2, 5, 0.48);
+  background: rgba(0, 0, 0, 0.48);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
   box-shadow: 0 24px 70px rgba(0, 0, 0, 0.42);
@@ -501,7 +501,7 @@ header {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(225, 29, 72, 0.28), rgba(255, 255, 255, 0.08), transparent);
+  background: linear-gradient(135deg, #A40000, rgba(255, 255, 255, 0.08), transparent);
   pointer-events: none;
 }
 
@@ -531,7 +531,7 @@ header {
 
 .hero-orbit {
   position: absolute;
-  border: 1px solid rgba(225, 29, 72, 0.28);
+  border: 1px solid #A40000;
   border-radius: 50%;
   z-index: -1;
   pointer-events: none;
@@ -585,8 +585,8 @@ header {
   align-items: center;
   padding: clamp(6rem, 10vw, 10rem) clamp(2rem, 7vw, 7rem);
   background:
-    radial-gradient(circle at 12% 22%, rgba(225, 29, 72, 0.22), transparent 25rem),
-    linear-gradient(135deg, #0b0b0b 0%, #17040a 48%, #050505 100%);
+    radial-gradient(circle at 12% 22%, #A40000, transparent 25rem),
+    linear-gradient(135deg, #0b0b0b 0%, #050505 48%, #050505 100%);
   color: #ffffff;
   position: relative;
   overflow: hidden;
@@ -597,7 +597,7 @@ header {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(225, 29, 72, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, #A40000 1px, transparent 1px),
     linear-gradient(0deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
   background-size: 72px 72px;
   mask-image: linear-gradient(to bottom, transparent, #000 18%, #000 82%, transparent);
@@ -619,7 +619,7 @@ header {
   position: absolute;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.14);
-  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.52), 0 0 50px rgba(225, 29, 72, 0.16);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.52), 0 0 50px #A40000;
 }
 
 .about-image img {
@@ -641,7 +641,7 @@ header {
   width: 48%;
   height: 42%;
   border-radius: 22px;
-  border: 8px solid #120408;
+  border: 8px solid #050505;
 }
 
 .about-ribbon {
@@ -734,8 +734,8 @@ header {
 .subsidiaries {
   padding: 10rem 2rem 9rem;
   background:
-    radial-gradient(circle at 50% 0%, rgba(225, 29, 72, 0.18), transparent 28rem),
-    linear-gradient(180deg, #050505 0%, #120307 55%, #000000 100%);
+    radial-gradient(circle at 50% 0%, #A40000, transparent 28rem),
+    linear-gradient(180deg, #050505 0%, #050505 55%, #000000 100%);
   position: relative;
   overflow: hidden;
 }
@@ -859,10 +859,8 @@ header {
   content: '';
   position: absolute;
   inset: -1px;
-  background:
-    linear-gradient(130deg, rgba(255, 255, 255, 0.22), transparent 24%),
-    linear-gradient(90deg, transparent, var(--accent-red), transparent);
-  background-size: 100% 100%, 220% 220%;
+  background: linear-gradient(130deg, rgba(255, 255, 255, 0.22), transparent 24%);
+  background-size: 100% 100%;
   border-radius: 24px;
   z-index: -1;
   opacity: 0;
@@ -876,7 +874,6 @@ header {
 
 .carousel-item:hover::after {
   opacity: 1;
-  animation: border-trace 2s linear infinite;
 }
 
 .card-image {
@@ -890,9 +887,7 @@ header {
   content: "";
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(180deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.64)),
-    radial-gradient(circle at 22% 20%, rgba(225, 29, 72, 0.24), transparent 15rem);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.64));
 }
 
 .card-image img {
@@ -932,7 +927,7 @@ header {
 }
 
 .carousel-btn {
-  background: rgba(225, 29, 72, 0.12);
+  background: #A40000;
   backdrop-filter: blur(20px);
   color: var(--text-main);
   border: 1px solid rgba(255, 255, 255, 0.12);
@@ -1009,7 +1004,7 @@ footer p {
   .hero {
     grid-template-columns: 1fr;
     min-height: auto;
-    padding: 5rem 1.5rem;
+    padding: 4rem 1.5rem;
     text-align: center;
   }
 
@@ -1404,20 +1399,6 @@ footer p {
   }
 }
 
-@keyframes border-trace {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
 .hero::before {
   content: '';
   position: absolute;
@@ -1562,7 +1543,7 @@ footer p {
   .hero {
     grid-template-columns: 1fr;
     min-height: auto;
-    padding: 5rem 1.5rem 4rem;
+    padding: 4rem 1.5rem 3.2rem;
     text-align: center;
   }
 
@@ -1752,7 +1733,7 @@ svg {
 
   .hero {
     min-height: auto;
-    padding-top: clamp(5rem, 10vw, 7rem);
+    padding-top: clamp(4rem, 8vw, 5.6rem);
   }
 
   .about-section,
@@ -1820,9 +1801,9 @@ svg {
   }
 
   .hero {
-    min-height: calc(100svh - 134px);
-    padding: clamp(3.2rem, 10vw, 5rem) clamp(1rem, 5vw, 1.5rem) 3.5rem;
-    gap: 2.5rem;
+    min-height: calc(80svh - 107px);
+    padding: clamp(2.55rem, 8vw, 4rem) clamp(1rem, 5vw, 1.5rem) 2.8rem;
+    gap: 2rem;
   }
 
   .hero-copy {
@@ -1986,7 +1967,7 @@ svg {
 
   .hero {
     min-height: auto;
-    padding-top: 3rem;
+    padding-top: 2.4rem;
   }
 
   .hero-kicker {
