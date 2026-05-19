@@ -3,6 +3,7 @@
 
 <head>
   <title>Del-York Group Landing Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -221,14 +222,21 @@
 
     let isAutoPlaying = true;
     let autoPlayInterval;
-    const scrollAmount = 460;
+    const getScrollAmount = () => {
+      const firstItem = document.querySelector('.carousel-item-link');
+      if (!firstItem) return container.clientWidth;
+
+      const trackStyles = window.getComputedStyle(track);
+      const gap = parseFloat(trackStyles.columnGap || trackStyles.gap) || 0;
+      return firstItem.getBoundingClientRect().width + gap;
+    };
 
     // Create Dots
     items.forEach((_, index) => {
       const dot = document.createElement('div');
       dot.className = `dot ${index === 0 ? 'active' : ''}`;
       dot.addEventListener('click', () => {
-        container.scrollTo({ left: index * scrollAmount, behavior: 'smooth' });
+        container.scrollTo({ left: index * getScrollAmount(), behavior: 'smooth' });
         updateDots(index);
         isAutoPlaying = false;
         setTimeout(() => isAutoPlaying = true, 5000);
@@ -243,7 +251,7 @@
     };
 
     container.addEventListener('scroll', () => {
-      const activeIndex = Math.round(container.scrollLeft / scrollAmount);
+      const activeIndex = Math.round(container.scrollLeft / getScrollAmount());
       updateDots(activeIndex);
     });
 
@@ -253,7 +261,7 @@
           if (container.scrollLeft + container.offsetWidth >= container.scrollWidth - 10) {
             container.scrollTo({ left: 0, behavior: 'smooth' });
           } else {
-            container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            container.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
           }
         }
       }, 3000);
@@ -265,13 +273,13 @@
 
     // Manual Controls
     prevBtn.addEventListener('click', () => {
-      container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+      container.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
       isAutoPlaying = false;
       setTimeout(() => isAutoPlaying = true, 5000);
     });
 
     nextBtn.addEventListener('click', () => {
-      container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      container.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
       isAutoPlaying = false;
       setTimeout(() => isAutoPlaying = true, 5000);
     });

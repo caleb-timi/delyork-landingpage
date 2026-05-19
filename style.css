@@ -1708,3 +1708,374 @@ footer p {
     gap: 0;
   }
 }
+
+/* Mobile polish */
+img,
+svg {
+  max-width: 100%;
+}
+
+@media (hover: none), (pointer: coarse) {
+  body {
+    cursor: auto;
+  }
+
+  .custom-cursor,
+  .cursor-follower,
+  .ripple {
+    display: none;
+  }
+
+  .carousel-item:hover,
+  .cta-button:hover,
+  .primary-btn:hover,
+  .carousel-btn:hover {
+    transform: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  header {
+    height: auto;
+    min-height: 82px;
+    padding: 0;
+  }
+
+  .logo {
+    padding-left: clamp(1.25rem, 4vw, 2.5rem);
+  }
+
+  .main-nav {
+    padding-right: clamp(1.25rem, 4vw, 2.5rem);
+  }
+
+  .hero {
+    min-height: auto;
+    padding-top: clamp(5rem, 10vw, 7rem);
+  }
+
+  .about-section,
+  .subsidiaries {
+    scroll-margin-top: 92px;
+  }
+
+  .carousel-track {
+    gap: 1.5rem;
+    padding: 0 max(1.5rem, calc((100vw - 350px) / 2));
+  }
+}
+
+@media (max-width: 768px) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    letter-spacing: 1px;
+  }
+
+  header {
+    position: sticky;
+    top: 0;
+    gap: 0;
+    background: #000000;
+  }
+
+  .logo,
+  .main-nav {
+    height: auto;
+    padding: 0.9rem 1rem;
+  }
+
+  .logo img {
+    height: clamp(40px, 10vw, 50px);
+  }
+
+  .main-nav {
+    overflow-x: auto;
+    justify-content: flex-start;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .main-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .main-nav ul {
+    width: max-content;
+    min-width: 100%;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: clamp(1rem, 4vw, 1.6rem);
+  }
+
+  .main-nav a {
+    font-size: 0.78rem;
+    letter-spacing: 1.4px;
+    white-space: nowrap;
+  }
+
+  .hero {
+    min-height: calc(100svh - 134px);
+    padding: clamp(3.2rem, 10vw, 5rem) clamp(1rem, 5vw, 1.5rem) 3.5rem;
+    gap: 2.5rem;
+  }
+
+  .hero-copy {
+    width: 100%;
+    max-width: 40rem;
+    min-width: 0;
+  }
+
+  .hero-kicker {
+    align-items: flex-start;
+    gap: 0.65rem;
+    line-height: 1.35;
+    letter-spacing: 2px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.65rem, 13vw, 4.1rem);
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+
+  .hero p {
+    font-size: clamp(1rem, 4vw, 1.08rem);
+    line-height: 1.65;
+  }
+
+  .hero-actions {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 1.25rem;
+    width: min(100%, 22rem);
+    margin-inline: auto;
+  }
+
+  .cta-button {
+    width: 100%;
+    padding: 0.95rem 1rem;
+    text-align: center;
+  }
+
+  .hero-link {
+    align-self: center;
+    font-size: 0.82rem;
+  }
+
+  .hero-showcase {
+    width: min(100%, 390px);
+    aspect-ratio: 0.92;
+  }
+
+  .showcase-card-main {
+    border-radius: 18px;
+  }
+
+  .showcase-card-top,
+  .showcase-card-bottom {
+    border-radius: 14px;
+  }
+
+  .about-section {
+    padding: 4.25rem clamp(1rem, 5vw, 1.5rem);
+    gap: 2.5rem;
+  }
+
+  .about-content h2 {
+    font-size: clamp(2.15rem, 10.5vw, 3.4rem);
+    line-height: 1.04;
+  }
+
+  .about-points div {
+    padding: 1.15rem;
+  }
+
+  .subsidiaries {
+    padding: 5.5rem 0 5rem;
+  }
+
+  .section-heading {
+    padding: 0 clamp(1rem, 5vw, 1.5rem);
+    margin-bottom: 1.25rem;
+  }
+
+  .section-heading p {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .carousel-wrapper {
+    display: block;
+  }
+
+  .carousel-container {
+    padding: 2.5rem 0 1rem;
+    scroll-padding-inline: clamp(1rem, 5vw, 1.5rem);
+  }
+
+  .carousel-track {
+    gap: 1rem;
+    padding: 0 clamp(1rem, 5vw, 1.5rem);
+  }
+
+  .carousel-item {
+    width: min(82vw, 330px);
+    height: auto;
+    min-height: 430px;
+    border-radius: 18px;
+    scroll-snap-align: start;
+  }
+
+  .carousel-item::after {
+    border-radius: 18px;
+  }
+
+  .card-content {
+    padding: 1.45rem;
+  }
+
+  .card-content h3 {
+    font-size: 1.28rem;
+    line-height: 1.15;
+  }
+
+  .card-content p {
+    font-size: 0.95rem;
+  }
+
+  .carousel-btn {
+    display: none;
+  }
+
+  .carousel-pagination {
+    gap: 0.65rem;
+    margin-top: 1.75rem;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
+
+  footer {
+    padding: 1.5rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo,
+  .main-nav {
+    padding-inline: 0.8rem;
+  }
+
+  .main-nav ul {
+    gap: 0.75rem;
+  }
+
+  .main-nav a {
+    font-size: 0.68rem;
+    letter-spacing: 1px;
+  }
+
+  .hero {
+    min-height: auto;
+    padding-top: 3rem;
+  }
+
+  .hero-kicker {
+    font-size: 0.72rem;
+  }
+
+  .hero-kicker::before {
+    width: 22px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.35rem, 12.5vw, 3.2rem);
+    max-width: 9.4ch;
+    margin-inline: auto;
+    overflow-wrap: normal;
+  }
+
+  .hero-showcase {
+    width: min(100%, 340px);
+  }
+
+  .hero-stat {
+    border-radius: 12px;
+    padding: 0.65rem 0.75rem;
+  }
+
+  .hero-stat strong {
+    font-size: 1.05rem;
+  }
+
+  .hero-stat span {
+    font-size: 0.58rem;
+  }
+
+  .about-visual {
+    min-height: 300px;
+  }
+
+  .about-ribbon {
+    padding: 0.8rem 0.95rem;
+    letter-spacing: 1.4px;
+  }
+
+  .subsidiaries::before {
+    top: 2.75rem;
+    font-size: 4rem;
+  }
+
+  .carousel-item {
+    width: min(86vw, 300px);
+    min-height: 420px;
+  }
+
+  .card-image {
+    height: 180px;
+  }
+}
+
+@media (max-width: 360px) {
+  .main-nav ul {
+    justify-content: flex-start;
+    gap: 0.65rem;
+  }
+
+  .main-nav a {
+    font-size: 0.64rem;
+    letter-spacing: 0.8px;
+  }
+
+  .hero {
+    padding-inline: 0.85rem;
+  }
+
+  .hero h1 {
+    max-width: 9ch;
+    font-size: 2.05rem;
+  }
+
+  .cta-button {
+    font-size: 0.88rem;
+    letter-spacing: 1.2px;
+  }
+
+  .about-content h2 {
+    font-size: 2rem;
+  }
+
+  .carousel-item {
+    width: 88vw;
+  }
+
+  .card-content {
+    padding: 1.2rem;
+  }
+}
