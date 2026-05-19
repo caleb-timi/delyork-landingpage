@@ -1715,7 +1715,8 @@ svg {
   max-width: 100%;
 }
 
-@media (hover: none), (pointer: coarse) {
+@media (hover: none),
+(pointer: coarse) {
   body {
     cursor: auto;
   }
@@ -1766,6 +1767,7 @@ svg {
 }
 
 @media (max-width: 768px) {
+
   h1,
   h2,
   h3,
@@ -1967,6 +1969,7 @@ svg {
 }
 
 @media (max-width: 480px) {
+
   .logo,
   .main-nav {
     padding-inline: 0.8rem;
@@ -2077,5 +2080,179 @@ svg {
 
   .card-content {
     padding: 1.2rem;
+  }
+}
+
+/* Contact mobile polish */
+@media (max-width: 1024px) {
+  .contact-hero {
+    padding: clamp(5rem, 9vw, 7rem) clamp(1.25rem, 4vw, 2rem) 2.5rem;
+  }
+
+  .contact-container {
+    width: 100%;
+    max-width: 760px;
+    padding: 1.5rem clamp(1.25rem, 4vw, 2rem) 7rem;
+  }
+
+  .contact-grid {
+    gap: 3rem;
+  }
+
+  .contact-info-panel {
+    gap: 2.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-page-body .bg-blobs {
+    display: none;
+  }
+
+  .contact-main {
+    overflow: hidden;
+  }
+
+  .contact-bg-glow {
+    top: 4rem;
+    width: 100vw;
+    height: 100vw;
+    max-width: 100%;
+  }
+
+  .contact-hero {
+    padding: 4rem clamp(1rem, 5vw, 1.5rem) 1.5rem;
+  }
+
+  .contact-hero h1 {
+    max-width: 10ch;
+    margin-inline: auto;
+    font-size: clamp(2.25rem, 11vw, 3.2rem);
+    line-height: 1;
+  }
+
+  .contact-hero p {
+    max-width: 34rem;
+    font-size: clamp(1rem, 4vw, 1.08rem);
+    line-height: 1.65;
+  }
+
+  .contact-container {
+    padding: 1.25rem clamp(1rem, 5vw, 1.5rem) 5rem;
+  }
+
+  .contact-grid {
+    gap: 2.5rem;
+  }
+
+  .info-group h3 {
+    align-items: flex-start;
+    gap: 0.65rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.25rem;
+    line-height: 1.2;
+  }
+
+  .info-group h3 svg {
+    flex: 0 0 22px;
+    width: 22px;
+    height: 22px;
+    margin-top: 0.1rem;
+  }
+
+  .office {
+    padding-left: 0.85rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .office p {
+    font-size: 0.95rem;
+  }
+
+  .hover-link {
+    max-width: 100%;
+    font-size: 1rem;
+    overflow-wrap: anywhere;
+  }
+
+  .glassmorphism {
+    width: 100%;
+    padding: 2rem clamp(1rem, 5vw, 1.5rem);
+    border-radius: 18px;
+  }
+
+  .glassmorphism h2 {
+    margin-bottom: 2rem;
+    font-size: clamp(1.6rem, 7vw, 2rem);
+    line-height: 1.15;
+  }
+
+  .form-group {
+    margin-bottom: 2.25rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    min-height: 44px;
+    font-size: 1rem;
+  }
+
+  .form-group textarea {
+    min-height: 132px;
+  }
+
+  .primary-btn {
+    min-height: 54px;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-hero {
+    padding-top: 3.25rem;
+  }
+
+  .contact-hero h1 {
+    font-size: clamp(2rem, 10vw, 2.8rem);
+  }
+
+  .contact-info-panel {
+    gap: 2rem;
+  }
+
+  .glassmorphism {
+    padding: 1.6rem 1rem;
+    border-radius: 16px;
+  }
+
+  .premium-form .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .primary-btn span {
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 360px) {
+  .contact-container {
+    padding-inline: 0.85rem;
+  }
+
+  .contact-hero {
+    padding-inline: 0.85rem;
+  }
+
+  .contact-hero h1 {
+    font-size: 1.9rem;
+  }
+
+  .glassmorphism {
+    padding: 1.35rem 0.85rem;
+  }
+
+  .info-group h3 {
+    font-size: 1.12rem;
   }
 }

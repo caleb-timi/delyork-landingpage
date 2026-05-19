@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Get in touch with Del-York Group. Connect with our global offices in Lagos and California.">
   <title>Contact Us | Del-York Group</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -114,7 +115,10 @@
     const cursor = document.querySelector('.custom-cursor');
     const follower = document.querySelector('.cursor-follower');
 
-    document.addEventListener('mousemove', (e) => {
+    const hasFinePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+    if (hasFinePointer) {
+      document.addEventListener('mousemove', (e) => {
       // Blobs movement
       const x = (e.clientX / window.innerWidth) * 20;
       const y = (e.clientY / window.innerHeight) * 20;
@@ -131,20 +135,21 @@
           follower.style.top = e.clientY + 'px';
         }, 50);
       }
-    });
+      });
 
-    // Click Ripple
-    document.addEventListener('click', (e) => {
-      const ripple = document.createElement('div');
-      ripple.className = 'ripple';
-      ripple.style.left = e.clientX + 'px';
-      ripple.style.top = e.clientY + 'px';
-      document.body.appendChild(ripple);
-      
-      setTimeout(() => {
-        ripple.remove();
-      }, 600);
-    });
+      // Click Ripple
+      document.addEventListener('click', (e) => {
+        const ripple = document.createElement('div');
+        ripple.className = 'ripple';
+        ripple.style.left = e.clientX + 'px';
+        ripple.style.top = e.clientY + 'px';
+        document.body.appendChild(ripple);
+
+        setTimeout(() => {
+          ripple.remove();
+        }, 600);
+      });
+    }
   </script>
 </body>
 </html>
