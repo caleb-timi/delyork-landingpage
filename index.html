@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Del-York Group Landing Page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&family=Inter:wght@300;400;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="custom-cursor"></div>
+  <div class="cursor-follower"></div>
+  <div class="bg-blobs">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+  <header>
+    <div class="logo">
+      <a href="#hero"><img src="cropped-Del-York_logo.png" alt="Company Logo"></a>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="#hero" class="active">Home</a></li>
+        <li><a href="#about-text">About</a></li>
+        <li><a href="#subsidiaries">Subsidiaries</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="hero" id="hero">
+      <div class="hero-backdrop" aria-hidden="true">
+        <img src="dy-comms-alt.png" alt="">
+        <img src="dy-industries-web.png" alt="">
+        <img src="dy-global-web.png" alt="">
+        <img src="dy-creative-academy-web.png" alt="">
+      </div>
+      <div class="hero-orbit hero-orbit-one"></div>
+      <div class="hero-orbit hero-orbit-two"></div>
+      <div class="hero-copy">
+        <span class="hero-kicker">Creative capital. Industrial scale.</span>
+        <h1>A living ecosystem for Africa's next leap.</h1>
+        <p>
+          Del-York Group turns ideas, talent, infrastructure, technology, and global partnerships into ventures built to
+          move culture and industry forward.
+        </p>
+        <div class="hero-actions">
+          <a href="https://delyorkgroup.com/" class="cta-button">Visit Official Website</a>
+          <a href="#subsidiaries" class="hero-link">Explore subsidiaries</a>
+        </div>
+      </div>
+      <div class="hero-showcase" aria-label="Del-York Group subsidiaries">
+        <div class="showcase-card showcase-card-main">
+          <img src="Kebulania.png" alt="Kebulania Lagos Film City">
+        </div>
+        <div class="showcase-card showcase-card-top">
+          <img src="dy-creative-academy-web.png" alt="Del-York Creative Academy">
+        </div>
+        <div class="showcase-card showcase-card-bottom">
+          <img src="dy-technologies-web.png" alt="Del-York Technology">
+        </div>
+        <div class="hero-stat stat-one">
+          <strong>6</strong>
+          <span>subsidiaries</span>
+        </div>
+        <div class="hero-stat stat-two">
+          <strong>Global</strong>
+          <span>partnerships</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section" id="about-text">
+      <div class="about-visual" aria-hidden="true">
+        <div class="about-image about-image-large">
+          <img src="Kebulania.png" alt="">
+        </div>
+        <div class="about-image about-image-small">
+          <img src="dy-global-web.png" alt="">
+        </div>
+        <div class="about-ribbon">Lagos | Global</div>
+      </div>
+      <div class="about-content">
+        <span class="section-kicker">About Del-York</span>
+        <h2>Where African ambition becomes world-ready enterprise.</h2>
+        <p>
+          We are a global community of renowned talent, builders, strategists, and creative operators united by one
+          belief: Africa's future should be designed with confidence, exported with quality, and scaled with
+          imagination.
+        </p>
+        <div class="about-points">
+          <div>
+            <strong>Create</strong>
+            <span>Training, media, communications, and stories that shape culture.</span>
+          </div>
+          <div>
+            <strong>Build</strong>
+            <span>Infrastructure, industries, and platforms that turn resources into value.</span>
+          </div>
+          <div>
+            <strong>Connect</strong>
+            <span>Global partnerships that help businesses enter, grow, and thrive in Africa.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="subsidiaries" id="subsidiaries">
+      <div class="section-heading">
+        <span class="section-kicker">The ecosystem</span>
+        <h1>Our Subsidiaries</h1>
+        <p>Six ventures, one pulse: creativity, infrastructure, technology, communications, consulting, and culture
+          moving together.</p>
+      </div>
+      <div class="carousel-wrapper">
+        <button class="carousel-btn prev-btn" id="prevBtn" aria-label="Previous slide">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+        </button>
+        <div class="carousel-container" id="carouselContainer">
+          <div class="carousel-track">
+            <a href="https://delyorkgroup.com/creative-academy/" class="carousel-item-link" target="_blank"
+              rel="noopener noreferrer">
+              <div class="carousel-item" data-label="Creative">
+                <div class="card-image"><img src="dy-creative-academy-web.png" alt="Del-York Creative Academy"></div>
+                <div class="card-content">
+                  <h3>Del-York Creative Academy</h3>
+                  <p>Premier incubator for cinematic excellence and digital media innovation, empowering storytellers
+                    with Hollywood‑grade training and industry partnerships.</p>
+                </div>
+              </div>
+            </a>
+            <a href="https://delyorkgroup.com/global/" class="carousel-item-link" target="_blank"
+              rel="noopener noreferrer">
+              <div class="carousel-item" data-label="Global">
+                <div class="card-image"><img src="dy-global-web.png" alt="Del-York International"></div>
+                <div class="card-content">
+                  <h3>Del-York Global</h3>
+                  <p>A leading consulting firm enabling global business expansion into Africa, providing strategic
+                    insights and market entry expertise.</p>
+                </div>
+              </div>
+            </a>
+            <a href="https://delyorkgroup.com/industries/" class="carousel-item-link" target="_blank"
+              rel="noopener noreferrer">
+              <div class="carousel-item" data-label="Industry">
+                <div class="card-image"><img src="dy-industries-web.png" alt="Del-York Industries"></div>
+                <div class="card-content">
+                  <h3>Del-York Industries</h3>
+                  <p>Provides precision‑engineered solutions for energy, construction, and manufacturing, driving
+                    efficiency and resilience across Africa’s core industries.</p>
+                </div>
+              </div>
+            </a>
+            <a href="https://delyorkgroup.com/technology/" class="carousel-item-link" target="_blank"
+              rel="noopener noreferrer">
+              <div class="carousel-item" data-label="Technology">
+                <div class="card-image"><img src="dy-technologies-web.png" alt="Del-York Technology"></div>
+                <div class="card-content">
+                  <h3>Del-York Technology</h3>
+                  <p>Builds AI‑driven platforms, enterprise software, and smart ecosystems, shaping the digital
+                    frontier.</p>
+                </div>
+              </div>
+            </a>
+            <a href="https://delyorkgroup.com/development-company/" class="carousel-item-link" target="_blank"
+              rel="noopener noreferrer">
+              <div class="carousel-item" data-label="Development">
+                <div class="card-image"><img src="Kebulania.png" alt="Del-York Development Company"></div>
+                <div class="card-content">
+                  <h3>Del-York Development Company</h3>
+                  <p>Leads innovative infrastructure projects such as Kebulania Lagos Film City and 042 Arena,
+                    delivering state‑of‑the‑art facilities.</p>
+                </div>
+              </div>
+            </a>
+            <a href="https://delyorkgroup.com/communications/" class="carousel-item-link" target="_blank"
+              rel="noopener noreferrer">
+              <div class="carousel-item" data-label="Comms">
+                <div class="card-image"><img src="dy-comms-alt.png" alt="Del-York Communications"></div>
+                <div class="card-content">
+                  <h3>Del-York Communications</h3>
+                  <p>A leading creative agency delivering PR, strategic communications, branding, and digital solutions.
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <button class="carousel-btn next-btn" id="nextBtn" aria-label="Next slide">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+      </div>
+      <div class="carousel-pagination" id="carouselPagination"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Del-York Group. All rights reserved.</p>
+  </footer>
+  <script>
+    // High-Class Carousel Logic
+    const container = document.getElementById('carouselContainer');
+    const track = document.querySelector('.carousel-track');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const items = document.querySelectorAll('.carousel-item');
+    const pagination = document.getElementById('carouselPagination');
+
+    let isAutoPlaying = true;
+    let autoPlayInterval;
+    const scrollAmount = 460;
+
+    // Create Dots
+    items.forEach((_, index) => {
+      const dot = document.createElement('div');
+      dot.className = `dot ${index === 0 ? 'active' : ''}`;
+      dot.addEventListener('click', () => {
+        container.scrollTo({ left: index * scrollAmount, behavior: 'smooth' });
+        updateDots(index);
+        isAutoPlaying = false;
+        setTimeout(() => isAutoPlaying = true, 5000);
+      });
+      pagination.appendChild(dot);
+    });
+
+    const updateDots = (activeIndex) => {
+      document.querySelectorAll('.dot').forEach((dot, index) => {
+        dot.classList.toggle('active', index === activeIndex);
+      });
+    };
+
+    container.addEventListener('scroll', () => {
+      const activeIndex = Math.round(container.scrollLeft / scrollAmount);
+      updateDots(activeIndex);
+    });
+
+    const startAutoPlay = () => {
+      autoPlayInterval = setInterval(() => {
+        if (isAutoPlaying) {
+          if (container.scrollLeft + container.offsetWidth >= container.scrollWidth - 10) {
+            container.scrollTo({ left: 0, behavior: 'smooth' });
+          } else {
+            container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+          }
+        }
+      }, 3000);
+    };
+
+    const stopAutoPlay = () => {
+      clearInterval(autoPlayInterval);
+    };
+
+    // Manual Controls
+    prevBtn.addEventListener('click', () => {
+      container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+      isAutoPlaying = false;
+      setTimeout(() => isAutoPlaying = true, 5000);
+    });
+
+    nextBtn.addEventListener('click', () => {
+      container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      isAutoPlaying = false;
+      setTimeout(() => isAutoPlaying = true, 5000);
+    });
+
+    // Pause on Hover
+    container.addEventListener('mouseenter', () => isAutoPlaying = false);
+    container.addEventListener('mouseleave', () => isAutoPlaying = true);
+
+    startAutoPlay();
+
+    // Mouse tracking for blobs and custom cursor
+    const cursor = document.querySelector('.custom-cursor');
+    const follower = document.querySelector('.cursor-follower');
+
+    document.addEventListener('mousemove', (e) => {
+      // Blobs movement
+      const x = (e.clientX / window.innerWidth) * 20;
+      const y = (e.clientY / window.innerHeight) * 20;
+      document.querySelector('.bg-blobs').style.transform = `translate(${x}px, ${y}px)`;
+
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+
+      setTimeout(() => {
+        follower.style.left = e.clientX + 'px';
+        follower.style.top = e.clientY + 'px';
+      }, 50);
+    });
+
+    document.addEventListener('click', (e) => {
+      const ripple = document.createElement('div');
+      ripple.className = 'ripple';
+      ripple.style.left = e.clientX + 'px';
+      ripple.style.top = e.clientY + 'px';
+      document.body.appendChild(ripple);
+
+      setTimeout(() => {
+        ripple.remove();
+      }, 600);
+    });
+  </script>
+</body>
+
+</html>
