@@ -19,7 +19,7 @@ if (hasFinePointer) {
       }, 50);
     }
   });
-
+  g
   document.addEventListener('click', (e) => {
     const ripple = document.createElement('div');
     ripple.className = 'ripple';

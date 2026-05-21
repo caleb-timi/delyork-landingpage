@@ -606,9 +606,9 @@ header {
 }
 
 .about-section::before,
-.subsidiary-hero + .subsidiary-section::before,
-.about-page-hero + .about-story-section::before,
-.contact-hero + .contact-container::before {
+.subsidiary-hero+.subsidiary-section::before,
+.about-page-hero+.about-story-section::before,
+.contact-hero+.contact-container::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -1129,7 +1129,7 @@ footer p {
   overflow: hidden;
 }
 
-.subsidiary-hero + .subsidiary-section {
+.subsidiary-hero+.subsidiary-section {
   isolation: isolate;
 }
 
@@ -1149,9 +1149,9 @@ footer p {
   min-width: 0;
 }
 
-.subsidiary-hero + .subsidiary-section > *,
-.about-story-section > *,
-.contact-container > * {
+.subsidiary-hero+.subsidiary-section>*,
+.about-story-section>*,
+.contact-container>* {
   position: relative;
   z-index: 1;
 }
@@ -1882,7 +1882,7 @@ footer p {
   isolation: isolate;
 }
 
-.contact-hero + .contact-container::before {
+.contact-hero+.contact-container::before {
   left: 50%;
   right: auto;
   width: 100vw;
@@ -3257,7 +3257,7 @@ body {
   width: 100%;
 }
 
-:where(.hero-copy, .about-content, .detail-copy, .contact-info-panel, .contact-form-wrapper, .executive-profile-copy) > :last-child {
+:where(.hero-copy, .about-content, .detail-copy, .contact-info-panel, .contact-form-wrapper, .executive-profile-copy)> :last-child {
   margin-bottom: 0;
 }
 
@@ -3405,6 +3405,7 @@ body {
 }
 
 @media (max-width: 640px) and (pointer: fine) {
+
   .hero-copy,
   .subsidiary-copy,
   .about-page-copy,
@@ -3432,6 +3433,7 @@ body {
 }
 
 @media (max-width: 420px) {
+
   .hero-copy,
   .subsidiary-copy,
   .about-page-copy,
@@ -3562,6 +3564,7 @@ body {
 }
 
 @media (max-width: 640px) and (pointer: fine) {
+
   .hero-copy,
   .subsidiary-copy,
   .about-page-copy,
