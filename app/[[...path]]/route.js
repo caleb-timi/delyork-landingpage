@@ -40,7 +40,7 @@ export async function GET(_request, context) {
     return new Response("Not Found", { status: 404 });
   }
 
-  const html = await readFile(path.join(process.cwd(), fileName), "utf8");
+  const html = await readFile(path.join(process.cwd(), "html-pages", fileName), "utf8");
 
   return new Response(html, {
     headers: {

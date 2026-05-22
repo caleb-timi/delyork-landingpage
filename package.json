@@ -3,14 +3,20 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "predev": "node scripts/sync-html-pages.mjs",
     "dev": "next dev",
+    "prebuild": "node scripts/sync-html-pages.mjs",
     "build": "next build",
+    "prestart": "node scripts/sync-html-pages.mjs",
     "start": "next start"
   },
+  "engines": {
+    "node": "22.x"
+  },
   "dependencies": {
-    "next": "latest",
-    "react": "latest",
-    "react-dom": "latest"
+    "next": "16.2.6",
+    "react": "19.2.6",
+    "react-dom": "19.2.6"
   },
   "devDependencies": {}
 }
