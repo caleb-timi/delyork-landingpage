@@ -13,6 +13,7 @@
   --glass-border: rgba(255, 255, 255, 0.08);
   --font-oswald: 'Oswald', sans-serif;
   --font-inter: 'Inter', sans-serif;
+  --font-montserrat: 'Montserrat', var(--font-inter);
 }
 
 * {
@@ -1533,14 +1534,16 @@ footer p {
 }
 
 .leader-card {
-  min-height: 380px;
+  min-height: 360px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   overflow: hidden;
   position: relative;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  background: #050505;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.015)),
+    #080808;
   color: inherit;
   text-decoration: none;
   animation: fadeUp 0.9s ease both;
@@ -1548,13 +1551,13 @@ footer p {
 
 .leader-card img {
   position: absolute;
-  inset: 0;
+  inset: 0 0 5.8rem;
   width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: center;
-  background: #050505;
-  filter: grayscale(0.08) contrast(1.04);
+  height: calc(100% - 5.8rem);
+  object-fit: cover;
+  object-position: center top;
+  background: transparent;
+  filter: contrast(1.05) saturate(1.04);
   transition: transform 0.6s ease;
 }
 
@@ -1652,20 +1655,23 @@ footer p {
 }
 
 .executive-profile-image {
-  min-height: 360px;
+  min-height: 0;
   overflow: hidden;
   position: relative;
-  background: #050505;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.015)),
+    #080808;
+  align-self: start;
 }
 
 .executive-profile-image img {
   width: 100%;
-  height: 100%;
+  height: auto;
   display: block;
   object-fit: contain;
   object-position: center;
-  background: #050505;
-  filter: grayscale(0.08) contrast(1.04);
+  background: transparent;
+  filter: contrast(1.05) saturate(1.04);
 }
 
 .executive-profile-copy {
@@ -1711,8 +1717,8 @@ footer p {
 }
 
 .profile-back-link {
-  display: inline-flex;
-  margin-bottom: 2rem;
+  display: none;
+  margin-bottom: 0;
   position: relative;
   z-index: 1;
 }
@@ -1722,6 +1728,46 @@ footer p {
   margin: 0 auto;
   position: relative;
   z-index: 1;
+  grid-template-columns: minmax(0, 0.92fr) minmax(360px, 0.88fr);
+  align-items: start;
+  gap: clamp(1.8rem, 4vw, 3.5rem);
+  padding: clamp(1rem, 2vw, 1.4rem);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.065), rgba(255, 255, 255, 0.025));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  animation: none;
+}
+
+.executive-profile-feature::before {
+  display: none;
+}
+
+.executive-profile-feature .executive-profile-image {
+  order: 2;
+  width: min(100%, 540px);
+  justify-self: end;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.015)),
+    #080808;
+  border-radius: 8px;
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.34);
+}
+
+.executive-profile-feature .executive-profile-image img {
+  width: 100%;
+  height: clamp(620px, 76vh, 880px);
+  min-height: clamp(620px, 76vh, 880px);
+  max-height: 880px;
+  object-fit: cover;
+  object-position: center top;
+  background: transparent;
+  border-radius: 8px;
+}
+
+.executive-profile-feature .executive-profile-copy {
+  order: 1;
+  padding: clamp(1rem, 2vw, 1.6rem) clamp(0.4rem, 1vw, 1rem);
 }
 
 .executive-profile-copy h1 {
@@ -1730,6 +1776,34 @@ footer p {
   font-size: clamp(2.4rem, 4.8vw, 5.2rem);
   font-weight: 700;
   line-height: 0.92;
+}
+
+.executive-profile-feature .section-kicker {
+  color: rgba(255, 255, 255, 0.58);
+  font-family: var(--font-oswald);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+}
+
+.executive-profile-feature .executive-profile-copy h1 {
+  color: #ffffff;
+  font-family: var(--font-oswald);
+  font-size: clamp(2.4rem, 4.8vw, 5.2rem);
+  line-height: 0.92;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.executive-profile-feature .executive-profile-copy p {
+  max-width: 640px;
+  margin-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.72);
+  font-family: var(--font-inter);
+  font-size: clamp(0.96rem, 1.15vw, 1.04rem);
+  line-height: 1.72;
+  text-align: left;
 }
 
 .profile-related {
@@ -2833,7 +2907,7 @@ svg {
   }
 
   .executive-profile-image {
-    min-height: 320px;
+    min-height: 0;
   }
 
   .about-content h2 {
@@ -3317,6 +3391,16 @@ body {
   .executive-profile,
   .contact-grid {
     grid-template-columns: 1fr;
+  }
+
+  .executive-profile-feature .executive-profile-image {
+    order: 1;
+    justify-self: center;
+    width: min(100%, 420px);
+  }
+
+  .executive-profile-feature .executive-profile-copy {
+    order: 2;
   }
 
   .detail-heading {
