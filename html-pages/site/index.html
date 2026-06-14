@@ -8,105 +8,60 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Oswald:wght@300;400;500;700&family=Inter:wght@300;400;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
 </head>
 
-<body>
-  <div class="custom-cursor"></div>
-  <div class="cursor-follower"></div>
+<body class="home-page-body">
   <div class="bg-blobs">
     <div class="blob blob-1"></div>
     <div class="blob blob-2"></div>
-    <div class="blob blob3"></div>
+    <div class="blob blob-3"></div>
   </div>
   <header>
     <div class="logo">
-      <a href="/html-pages/site/index.html#hero"><img src="/assets/images/cropped-Del-York_logo.png" alt="Company Logo"></a>
+      <a href="/html-pages/site/index.html#hero"><img src="/assets/images/cropped-Del-York_logo-white-text.png" alt="Company Logo"></a>
     </div>
     <nav class="main-nav">
       <ul>
         <li><a href="/html-pages/site/index.html#hero" class="active">Home</a></li>
         <li><a href="/html-pages/site/about.html">About</a></li>
-        <li><a href="/html-pages/site/index.html#subsidiaries">Subsidiaries</a></li>
-        <li><a href="/html-pages/site/contact.html">Contact</a></li>
+        
+        <li><a href="/html-pages/site/contact.html" class="nav-contact">Contact</a></li>
       </ul>
     </nav>
   </header>
   <main>
     <section class="hero" id="hero">
       <div class="hero-backdrop" aria-hidden="true">
-        <img src="/assets/images/dy-comms-alt.png" alt="">
+        <img src="/assets/images/dy-communications-official.png" alt="">
         <img src="/assets/images/dca-training-session-web.png" alt="">
-        <img src="/assets/images/reskill-africa-workforce.jpeg" alt="">
         <img src="/assets/images/dy-technologies-web.png" alt="">
-        <img src="/assets/images/dy-creative-academy-web.png" alt="">
+        <img src="/assets/images/reskill-africa-workforce.jpeg" alt="">
+      </div>
+      <div class="hero-signal-field" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
       <div class="hero-orbit hero-orbit-one"></div>
       <div class="hero-orbit hero-orbit-two"></div>
-      <div class="hero-copy">
-        <span class="hero-kicker">Creative capital. Industrial scale.</span>
-        <h1>A living ecosystem for Africa's next leap.</h1>
-        <p>
-          Del-York Group turns ideas, talent, infrastructure, technology, and global partnerships into ventures built to
-          move culture and industry forward.
-        </p>
-        <div class="hero-actions">
-          <a href="/html-pages/site/index.html#subsidiaries" class="hero-link">Explore subsidiaries</a>
-        </div>
+      <div class="hero-venture-map" aria-hidden="true">
+        <span class="venture-node node-one">Del-York Creative Academy</span>
+        <span class="venture-node node-two">Del-York Communications</span>
+        <span class="venture-node node-three">Del-York Technologies</span>
+        <span class="venture-node node-four">LIFE Africa</span>
+        <span class="venture-node node-five">Re-Skill Africa</span>
       </div>
-      <div class="hero-showcase" aria-label="Del-York Group subsidiaries">
-        <div class="showcase-card showcase-card-main">
-          <img src="/assets/images/dca-training-session-web.png" alt="Del-York Creative Academy training session">
-        </div>
-        <div class="showcase-card showcase-card-top">
-          <img src="/assets/images/dy-creative-academy-web.png" alt="Del-York Creative Academy">
-        </div>
-        <div class="showcase-card showcase-card-bottom">
-          <img src="/assets/images/dy-technologies-web.png" alt="Del-York Technologies">
-        </div>
-        <div class="hero-stat stat-one">
-          <strong>5</strong>
-          <span>subsidiaries</span>
-        </div>
-        <div class="hero-stat stat-two">
-          <strong>Global</strong>
-          <span>partnerships</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="about-section" id="about-text">
-      <div class="about-visual" aria-hidden="true">
-        <div class="about-image about-image-large">
-          <img src="/assets/images/Kebulania.png" alt="">
-        </div>
-        <div class="about-image about-image-small">
-          <img src="/assets/images/reskill-africa-skildustry.jpeg" alt="">
-        </div>
-        <div class="about-ribbon">Lagos | Global</div>
-      </div>
-      <div class="about-content">
-        <span class="section-kicker">Who We Are</span>
-        <h2>Where African ambition becomes world-ready enterprise.</h2>
-        <p>
-          We are a global community of renowned talent, builders, strategists, and creative operators united by one
-          belief: Africa's future should be designed with confidence, exported with quality, and scaled with
-          imagination.
-        </p>
-        <div class="about-points">
-          <div>
-            <strong>Create</strong>
-            <span>Training, media, communications, and stories that shape culture.</span>
-          </div>
-          <div>
-            <strong>Build</strong>
-            <span>Infrastructure, industries, and platforms that turn resources into value.</span>
-          </div>
-          <div>
-            <strong>Connect</strong>
-            <span>Global partnerships that help businesses enter, grow, and thrive in Africa.</span>
+      
+      <div class="hero-container">
+        <div class="hero-copy">
+          <h1 class="hero-brand">We Are<br>Del-York Group</h1>
+          <div class="hero-actions">
+            <a href="#subsidiaries" class="cta-button hero-primary-button">Explore Del-York</a>
+            <a href="/html-pages/site/about.html" class="hero-outline-button">Who We Are</a>
           </div>
         </div>
       </div>
@@ -116,201 +71,104 @@
       <div class="section-heading">
         <span class="section-kicker">The ecosystem</span>
         <h1>Our Subsidiaries</h1>
-        <p>Five ventures, one pulse: creative education, impact capital, communications, technology, and workforce
+        <p>Five subsidiaries, one pulse: creative education, impact capital, communications, technology, and workforce
           transformation
           moving together.</p>
       </div>
-      <div class="carousel-wrapper">
-        <button class="carousel-btn prev-btn" id="prevBtn" aria-label="Previous slide">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round">
-            <line x1="19" y1="12" x2="5" y2="12"></line>
-            <polyline points="12 19 5 12 12 5"></polyline>
-          </svg>
-        </button>
-        <div class="carousel-container" id="carouselContainer">
-          <div class="carousel-track">
-            <a href="/html-pages/subsidiaries/creative-academy.html" class="carousel-item-link">
-              <div class="carousel-item" data-label="Creative">
-                <div class="card-image"><img src="/assets/images/dy-creative-academy-web.png"
-                    alt="Del-York Creative Academy"></div>
-                <div class="card-content">
-                  <h3>Del-York Creative Academy</h3>
-                  <p>Premier incubator for cinematic excellence and digital media innovation, empowering storytellers
-                    with Hollywood-grade training and industry partnerships.</p>
-                </div>
-              </div>
-            </a>
-            <a href="/html-pages/subsidiaries/life-africa.html" class="carousel-item-link">
-              <div class="carousel-item" data-label="Impact">
-                <div class="card-image"><img src="/assets/images/life-africa-program.png"
-                    alt="LIFE Africa vocational empowerment"></div>
-                <div class="card-content">
-                  <h3>LIFE Africa</h3>
-                  <p>Catalytic capital and impact intelligence for creative and vocational talent, helping trained
-                    people transition into income, enterprise, and verified outcomes.</p>
-                </div>
-              </div>
-            </a>
-            <a href="/html-pages/subsidiaries/communications.html" class="carousel-item-link">
-              <div class="carousel-item" data-label="Comms">
-                <div class="card-image"><img src="/assets/images/dy-comms-alt.png" alt="Del-York Communications"></div>
-                <div class="card-content">
-                  <h3>Del-York Communications</h3>
-                  <p>A leading creative agency delivering PR, strategic communications, branding, marketing, digital
-                    solutions, and media production.</p>
-                </div>
-              </div>
-            </a>
-            <a href="/html-pages/subsidiaries/technology.html" class="carousel-item-link">
-              <div class="carousel-item" data-label="Technology">
-                <div class="card-image"><img src="/assets/images/dy-technologies-web.png" alt="Del-York Technologies">
-                </div>
-                <div class="card-content">
-                  <h3>Del-York Technologies</h3>
-                  <p>Builds AI-driven platforms, enterprise software, smart ecosystems, immersive experiences, and
-                    digital solutions for industries and governments.</p>
-                </div>
-              </div>
-            </a>
-            <a href="/html-pages/subsidiaries/reskill-africa.html" class="carousel-item-link">
-              <div class="carousel-item" data-label="Skills">
-                <div class="card-image"><img src="/assets/images/reskill-africa-workforce.jpeg"
-                    alt="Re-Skill Africa workforce development"></div>
-                <div class="card-content">
-                  <h3>Re-Skill Africa</h3>
-                  <p>An industrial talent and enterprise development platform using Skildustry, Skill Passport, and
-                    real production environments to build Africa's workforce.</p>
-                </div>
-              </div>
-            </a>
-          </div>
+      <div class="subsidiary-scroll-gallery" aria-label="Del-York Group subsidiaries">
+        <div class="subsidiary-slide-stage">
+          <a href="/html-pages/subsidiaries/creative-academy.html" class="subsidiary-scroll-panel">
+            <img src="/assets/images/dca-training-session-web.png" alt="Del-York Creative Academy training session">
+            <div class="subsidiary-scroll-copy">
+              <span class="subsidiary-index">Creative</span>
+              <h2>Del-York Creative Academy</h2>
+              <p>Premier incubator for cinematic excellence and digital media innovation, empowering storytellers with
+                Hollywood-grade training and industry partnerships.</p>
+              <span class="subsidiary-scroll-link">Explore subsidiary</span>
+            </div>
+          </a>
+          <a href="/html-pages/subsidiaries/life-africa.html" class="subsidiary-scroll-panel">
+            <img src="/assets/images/life-africa-program.png" alt="LIFE Africa vocational empowerment">
+            <div class="subsidiary-scroll-copy">
+              <span class="subsidiary-index">Impact</span>
+              <h2>LIFE Africa</h2>
+              <p>Catalytic capital and impact intelligence for creative and vocational talent, helping trained people
+                transition into income, enterprise, and verified outcomes.</p>
+              <span class="subsidiary-scroll-link">Explore subsidiary</span>
+            </div>
+          </a>
+          <a href="/html-pages/subsidiaries/communications.html" class="subsidiary-scroll-panel">
+            <img src="/assets/images/dy-comms-alt.png" alt="Del-York Communications">
+            <div class="subsidiary-scroll-copy">
+              <span class="subsidiary-index">Communications</span>
+              <h2>Del-York Communications</h2>
+              <p>A leading creative agency delivering PR, strategic communications, branding, marketing, digital
+                solutions, and media production.</p>
+              <span class="subsidiary-scroll-link">Explore subsidiary</span>
+            </div>
+          </a>
+          <a href="/html-pages/subsidiaries/technology.html" class="subsidiary-scroll-panel">
+            <img src="/assets/images/dy-technology-official.png" alt="Del-York Technologies">
+            <div class="subsidiary-scroll-copy">
+              <span class="subsidiary-index">Technology</span>
+              <h2>Del-York Technologies</h2>
+              <p>Builds AI-driven platforms, enterprise software, smart ecosystems, immersive experiences, and digital
+                solutions for industries and governments.</p>
+              <span class="subsidiary-scroll-link">Explore subsidiary</span>
+            </div>
+          </a>
+          <a href="/html-pages/subsidiaries/reskill-africa.html" class="subsidiary-scroll-panel">
+            <img src="/assets/images/reskill-africa-workforce.jpeg" alt="Re-Skill Africa workforce development">
+            <div class="subsidiary-scroll-copy">
+              <span class="subsidiary-index">Skills</span>
+              <h2>Re-Skill Africa</h2>
+              <p>An industrial talent and enterprise development platform using Skildustry, Skill Passport, and real
+                production environments to build Africa's workforce.</p>
+              <span class="subsidiary-scroll-link">Explore subsidiary</span>
+            </div>
+          </a>
         </div>
-        <button class="carousel-btn next-btn" id="nextBtn" aria-label="Next slide">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round">
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-            <polyline points="12 5 19 12 12 19"></polyline>
-          </svg>
-        </button>
       </div>
-      <div class="carousel-pagination" id="carouselPagination"></div>
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2026 Del-York Group. All rights reserved.</p>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="/html-pages/site/index.html#hero" class="footer-logo">
+          <img src="/assets/images/cropped-Del-York_logo-white-text.png" alt="Del-York Group">
+        </a>
+        <p>Building creative, technological, and industrial ventures for Africa's next leap.</p>
+      </div>
+      <nav class="footer-menu" aria-label="Footer navigation">
+        <div class="footer-column">
+          <h2>Company</h2>
+          <a href="/html-pages/site/index.html#hero">Home</a>
+          <a href="/html-pages/site/about.html">About</a>
+          <a href="/html-pages/site/contact.html">Contact</a>
+        </div>
+        <div class="footer-column">
+          <h2>Subsidiaries</h2>
+          <a href="/html-pages/subsidiaries/creative-academy.html">Creative Academy</a>
+          <a href="/html-pages/subsidiaries/life-africa.html">LIFE Africa</a>
+          <a href="/html-pages/subsidiaries/communications.html">Communications</a>
+          <a href="/html-pages/subsidiaries/technology.html">Technologies</a>
+          <a href="/html-pages/subsidiaries/reskill-africa.html">Re-Skill Africa</a>
+        </div>
+        <div class="footer-column">
+          <h2>Connect</h2>
+          <a href="mailto:info@delyorkgroup.com">info@delyorkgroup.com</a>
+          <a href="tel:+2349047721762">+234 904 772 1762</a>
+          <a href="/html-pages/site/contact.html">Lagos | Pasadena</a>
+        </div>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Del-York Group. All rights reserved.</p>
+      <a href="/html-pages/site/contact.html">Start a conversation</a>
+    </div>
   </footer>
-  <script>
-    // High-Class Carousel Logic
-    const container = document.getElementById('carouselContainer');
-    const track = document.querySelector('.carousel-track');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    const items = document.querySelectorAll('.carousel-item');
-    const pagination = document.getElementById('carouselPagination');
-
-    let isAutoPlaying = true;
-    let autoPlayInterval;
-    const getScrollAmount = () => {
-      const firstItem = document.querySelector('.carousel-item-link');
-      if (!firstItem) return container.clientWidth;
-
-      const trackStyles = window.getComputedStyle(track);
-      const gap = parseFloat(trackStyles.columnGap || trackStyles.gap) || 0;
-      return firstItem.getBoundingClientRect().width + gap;
-    };
-
-    // Create Dots
-    items.forEach((_, index) => {
-      const dot = document.createElement('div');
-      dot.className = `dot ${index === 0 ? 'active' : ''}`;
-      dot.addEventListener('click', () => {
-        container.scrollTo({ left: index * getScrollAmount(), behavior: 'smooth' });
-        updateDots(index);
-        isAutoPlaying = false;
-        setTimeout(() => isAutoPlaying = true, 5000);
-      });
-      pagination.appendChild(dot);
-    });
-
-    const updateDots = (activeIndex) => {
-      document.querySelectorAll('.dot').forEach((dot, index) => {
-        dot.classList.toggle('active', index === activeIndex);
-      });
-    };
-
-    container.addEventListener('scroll', () => {
-      const activeIndex = Math.round(container.scrollLeft / getScrollAmount());
-      updateDots(activeIndex);
-    });
-
-    const startAutoPlay = () => {
-      autoPlayInterval = setInterval(() => {
-        if (isAutoPlaying) {
-          if (container.scrollLeft + container.offsetWidth >= container.scrollWidth - 10) {
-            container.scrollTo({ left: 0, behavior: 'smooth' });
-          } else {
-            container.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
-          }
-        }
-      }, 3000);
-    };
-
-    const stopAutoPlay = () => {
-      clearInterval(autoPlayInterval);
-    };
-
-    // Manual Controls
-    prevBtn.addEventListener('click', () => {
-      container.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
-      isAutoPlaying = false;
-      setTimeout(() => isAutoPlaying = true, 5000);
-    });
-
-    nextBtn.addEventListener('click', () => {
-      container.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
-      isAutoPlaying = false;
-      setTimeout(() => isAutoPlaying = true, 5000);
-    });
-
-    // Pause on Hover
-    container.addEventListener('mouseenter', () => isAutoPlaying = false);
-    container.addEventListener('mouseleave', () => isAutoPlaying = true);
-
-    startAutoPlay();
-
-    // Mouse tracking for blobs and custom cursor
-    const cursor = document.querySelector('.custom-cursor');
-    const follower = document.querySelector('.cursor-follower');
-
-    document.addEventListener('mousemove', (e) => {
-      // Blobs movement
-      const x = (e.clientX / window.innerWidth) * 20;
-      const y = (e.clientY / window.innerHeight) * 20;
-      document.querySelector('.bg-blobs').style.transform = `translate(${x}px, ${y}px)`;
-
-      cursor.style.left = e.clientX + 'px';
-      cursor.style.top = e.clientY + 'px';
-
-      setTimeout(() => {
-        follower.style.left = e.clientX + 'px';
-        follower.style.top = e.clientY + 'px';
-      }, 50);
-    });
-
-    document.addEventListener('click', (e) => {
-      const ripple = document.createElement('div');
-      ripple.className = 'ripple';
-      ripple.style.left = e.clientX + 'px';
-      ripple.style.top = e.clientY + 'px';
-      document.body.appendChild(ripple);
-
-      setTimeout(() => {
-        ripple.remove();
-      }, 600);
-    });
-  </script>
+  <script src="/site.js"></script>
 </body>
 
 </html>
