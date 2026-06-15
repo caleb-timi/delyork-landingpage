@@ -92,75 +92,88 @@ if (!prefersReducedMotion && 'IntersectionObserver' in window) {
   scrollStages.forEach((stage) => stage.classList.add('is-visible'));
 }
 
-const subsidiaryGallery = document.querySelector('.subsidiary-scroll-gallery');
-const subsidiarySlides = subsidiaryGallery
-  ? Array.from(subsidiaryGallery.querySelectorAll('.subsidiary-scroll-panel'))
-  : [];
+const carouselContainer = document.getElementById('carouselContainer');
+const carouselTrack = document.querySelector('.carousel-track');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const carouselItems = document.querySelectorAll('.carousel-item');
+const carouselPagination = document.getElementById('carouselPagination');
 
-if (subsidiaryGallery && subsidiarySlides.length) {
-  subsidiaryGallery.style.setProperty('--slide-count', subsidiarySlides.length);
-  subsidiarySlides.forEach((slide, index) => {
-    slide.classList.add('subsidiary-reveal');
-    slide.style.setProperty('--slide-index', index);
+if (carouselContainer && carouselTrack && carouselItems.length) {
+  let isAutoPlaying = true;
+  let autoPlayInterval;
+
+  const getScrollAmount = () => {
+    const firstItem = document.querySelector('.carousel-item-link');
+    if (!firstItem) return carouselContainer.clientWidth;
+
+    const trackStyles = window.getComputedStyle(carouselTrack);
+    const gap = parseFloat(trackStyles.columnGap || trackStyles.gap) || 0;
+    return firstItem.getBoundingClientRect().width + gap;
+  };
+
+  const updateDots = (activeIndex) => {
+    document.querySelectorAll('.dot').forEach((dot, index) => {
+      dot.classList.toggle('active', index === activeIndex);
+    });
+  };
+
+  if (carouselPagination) {
+    carouselItems.forEach((_, index) => {
+      const dot = document.createElement('div');
+      dot.className = `dot ${index === 0 ? 'active' : ''}`;
+      dot.addEventListener('click', () => {
+        carouselContainer.scrollTo({ left: index * getScrollAmount(), behavior: 'smooth' });
+        updateDots(index);
+        isAutoPlaying = false;
+        setTimeout(() => isAutoPlaying = true, 5000);
+      });
+      carouselPagination.appendChild(dot);
+    });
+  }
+
+  carouselContainer.addEventListener('scroll', () => {
+    const activeIndex = Math.round(carouselContainer.scrollLeft / getScrollAmount());
+    updateDots(activeIndex);
   });
 
-  let galleryTicking = false;
-  let galleryProgress = 0;
-  const subsidiaryStage = subsidiaryGallery.querySelector('.subsidiary-slide-stage');
-
-  const getStageTopOffset = () => {
-    const top = subsidiaryStage ? parseFloat(window.getComputedStyle(subsidiaryStage).top) : 0;
-    return Number.isFinite(top) ? top : 0;
+  const startAutoPlay = () => {
+    if (prefersReducedMotion) return;
+    autoPlayInterval = setInterval(() => {
+      if (isAutoPlaying) {
+        if (carouselContainer.scrollLeft + carouselContainer.offsetWidth >= carouselContainer.scrollWidth - 10) {
+          carouselContainer.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          carouselContainer.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+        }
+      }
+    }, 3000);
   };
 
-  const getGalleryMetrics = () => {
-    const topOffset = getStageTopOffset();
-    const galleryTop = window.scrollY + subsidiaryGallery.getBoundingClientRect().top;
-    const stageHeight = subsidiaryStage?.offsetHeight || 0;
-    const scrollStart = galleryTop - topOffset;
-    const scrollEnd = galleryTop + subsidiaryGallery.offsetHeight - topOffset - stageHeight;
-    const scrollRange = Math.max(1, scrollEnd - scrollStart);
-
-    return { scrollStart, scrollRange };
+  const stopAutoPlay = () => {
+    clearInterval(autoPlayInterval);
   };
 
-  const updateSubsidiarySlideshow = () => {
-    const { scrollStart, scrollRange } = getGalleryMetrics();
-    const rawProgress = (window.scrollY - scrollStart) / scrollRange;
-    galleryProgress = Math.min(1, Math.max(0, rawProgress));
+  prevBtn?.addEventListener('click', () => {
+    carouselContainer.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+    isAutoPlaying = false;
+    setTimeout(() => isAutoPlaying = true, 5000);
+  });
 
-    const rawIndex = galleryProgress * (subsidiarySlides.length - 1);
-    const activeIndex = Math.min(subsidiarySlides.length - 1, Math.max(0, Math.round(rawIndex)));
+  nextBtn?.addEventListener('click', () => {
+    carouselContainer.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+    isAutoPlaying = false;
+    setTimeout(() => isAutoPlaying = true, 5000);
+  });
 
-    subsidiarySlides.forEach((slide, index) => {
-      const slideY = index === 0
-        ? 0
-        : Math.min(100, Math.max(0, (index - rawIndex) * 100));
-      const visibility = 1 - Math.min(1, slideY / 100);
-      const imageScale = prefersReducedMotion ? 1 : 1.035 + visibility * 0.018;
-      const copyShift = prefersReducedMotion ? 0 : (1 - visibility) * 28;
+  carouselContainer.addEventListener('mouseenter', () => isAutoPlaying = false);
+  carouselContainer.addEventListener('mouseleave', () => isAutoPlaying = true);
+  carouselContainer.addEventListener('focusin', () => isAutoPlaying = false);
+  carouselContainer.addEventListener('focusout', () => isAutoPlaying = true);
 
-      slide.classList.toggle('is-active', index === activeIndex);
-      slide.classList.toggle('is-visible', index === 0 || slideY < 99.5);
-      slide.style.setProperty('--slide-y', `${slideY.toFixed(2)}%`);
-      slide.style.setProperty('--image-scale', imageScale.toFixed(3));
-      slide.style.setProperty('--copy-y', `${copyShift.toFixed(1)}px`);
-      slide.style.zIndex = String(10 + index);
-    });
+  window.addEventListener('pagehide', () => {
+    stopAutoPlay();
+  });
 
-    subsidiaryGallery.style.setProperty('--active-slide', activeIndex + 1);
-    galleryTicking = false;
-  };
-
-  const requestGalleryUpdate = () => {
-    if (!galleryTicking) {
-      window.requestAnimationFrame(updateSubsidiarySlideshow);
-      galleryTicking = true;
-    }
-  };
-
-  document.documentElement.classList.remove('subsidiary-scroll-locked', 'subsidiary-scroll-handoff');
-  updateSubsidiarySlideshow();
-  window.addEventListener('scroll', requestGalleryUpdate, { passive: true });
-  window.addEventListener('resize', requestGalleryUpdate, { passive: true });
+  startAutoPlay();
 }
