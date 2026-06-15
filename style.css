@@ -5750,6 +5750,10 @@ body>header.nav-scrolled {
   justify-content: center;
   margin-top: clamp(2rem, 4vw, 3.25rem);
   gap: 1rem;
+  position: relative;
+  z-index: 20;
+  opacity: 1;
+  filter: none;
 }
 
 .home-page-body .hero-primary-button,
@@ -5963,5 +5967,371 @@ body footer::after,
   display: none !important;
   background: transparent !important;
   opacity: 0 !important;
+}
+
+/* Device optimization pass */
+img,
+video,
+iframe {
+  max-width: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  overflow-x: clip;
+}
+
+.hero,
+.subsidiary-hero,
+.about-page-hero,
+.contact-hero,
+.executive-profile-page {
+  min-height: min(100svh, 980px);
+}
+
+.carousel-container {
+  overscroll-behavior-inline: contain;
+  scroll-padding-inline: clamp(1rem, 7vw, 8rem);
+}
+
+.carousel-track {
+  padding-inline: clamp(1rem, 8vw, 8rem);
+}
+
+.carousel-item {
+  width: clamp(300px, 32vw, 440px);
+}
+
+.card-content h3 {
+  text-wrap: balance;
+}
+
+.card-content p,
+.footer-brand p,
+.contact-detail,
+.office p,
+.about-page-copy p,
+.executive-profile-copy p {
+  overflow-wrap: anywhere;
+}
+
+.footer-menu,
+.contact-grid,
+.about-pillars-grid,
+.executive-profile-list,
+.profile-related {
+  min-width: 0;
+}
+
+@media (max-width: 1180px) {
+  .footer-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-brand,
+  .footer-menu {
+    padding-inline: clamp(0.5rem, 2vw, 1.25rem);
+  }
+
+  .footer-menu {
+    grid-template-columns: repeat(3, minmax(9rem, 1fr));
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero,
+  .subsidiary-hero,
+  .about-page-hero,
+  .contact-hero,
+  .executive-profile-page {
+    min-height: auto;
+  }
+
+  .executive-profile-feature {
+    grid-template-columns: 1fr;
+  }
+
+  .executive-profile-feature .executive-profile-image {
+    justify-self: center;
+    width: min(100%, 460px);
+  }
+
+  .executive-profile-feature .executive-profile-image img {
+    height: auto;
+    min-height: 0;
+    max-height: min(72svh, 680px);
+  }
+
+  .contact-container {
+    padding-inline: clamp(1rem, 4vw, 2rem);
+  }
+}
+
+@media (max-width: 900px) {
+  body > header,
+  .home-page-body header {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    min-height: 76px;
+    padding-inline: clamp(0.75rem, 3vw, 1.25rem);
+  }
+
+  body > header .logo,
+  body > header .main-nav,
+  .home-page-body header .logo,
+  .home-page-body header .main-nav {
+    min-width: 0;
+  }
+
+  body > header .logo img,
+  .home-page-body header .logo img {
+    width: auto;
+    max-width: clamp(92px, 24vw, 132px);
+    height: auto;
+    max-height: 46px;
+  }
+
+  body > header .main-nav,
+  .home-page-body header .main-nav {
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding-inline: 0;
+    scrollbar-width: none;
+  }
+
+  body > header .main-nav::-webkit-scrollbar,
+  .home-page-body header .main-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  body > header .main-nav ul,
+  .home-page-body header .main-nav ul {
+    display: flex;
+    width: 100%;
+    min-width: 0;
+    justify-content: flex-end;
+    gap: clamp(0.55rem, 2.3vw, 1rem);
+    padding-left: 0.25rem;
+  }
+
+  body > header .main-nav a,
+  .home-page-body header .main-nav a {
+    min-height: 2.25rem;
+    padding: 0.58rem 0.72rem;
+    font-size: clamp(0.66rem, 2vw, 0.76rem);
+    letter-spacing: 1px;
+    white-space: nowrap;
+  }
+
+  .home-page-body .hero {
+    padding-top: clamp(6.25rem, 16svh, 8rem);
+  }
+
+  .home-page-body .hero h1 {
+    font-size: clamp(3rem, 15vw, 6rem);
+    max-width: 8.5ch;
+    margin-inline: auto;
+  }
+
+  .home-page-body .hero-actions {
+    width: min(100%, 32rem);
+  }
+}
+
+@media (max-width: 768px) {
+  section,
+  .subsidiary-section,
+  .about-story-section,
+  .about-pillars-section,
+  .about-leadership-section,
+  .executive-profiles-section,
+  .executive-profile-page,
+  .contact-container {
+    padding-inline: clamp(1rem, 5vw, 1.5rem);
+  }
+
+  .home-page-body .hero-backdrop {
+    opacity: 0.82;
+  }
+
+  .home-page-body .hero-backdrop img {
+    min-height: 100svh;
+  }
+
+  .carousel-container {
+    padding-block: 2rem 0.75rem;
+  }
+
+  .carousel-track {
+    gap: 1rem;
+    padding-inline: clamp(1rem, 5vw, 1.5rem);
+  }
+
+  .carousel-item {
+    width: min(84vw, 330px);
+    min-height: 0;
+    height: auto;
+  }
+
+  .card-image {
+    height: clamp(190px, 56vw, 250px);
+  }
+
+  .card-content {
+    padding: clamp(1.15rem, 4vw, 1.45rem);
+  }
+
+  .carousel-controls {
+    margin-top: 0.9rem;
+  }
+
+  .footer-menu {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .footer-bottom {
+    align-items: flex-start;
+  }
+
+  .contact-grid,
+  .about-pillars-grid,
+  .executive-profile-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  body > header,
+  .home-page-body header {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 0.35rem;
+    padding-block: 0.75rem;
+  }
+
+  body > header .logo,
+  .home-page-body header .logo {
+    position: relative;
+    inset: auto;
+    height: auto;
+    transform: none;
+  }
+
+  body > header .main-nav,
+  .home-page-body header .main-nav {
+    width: 100%;
+  }
+
+  body > header .main-nav ul,
+  .home-page-body header .main-nav ul {
+    display: flex;
+    grid-template-columns: none;
+    width: 100%;
+    min-width: 0;
+    justify-content: center;
+  }
+
+  body > header .main-nav li,
+  .home-page-body header .main-nav li {
+    grid-column: auto !important;
+  }
+
+  body > header .main-nav a.nav-contact,
+  .home-page-body header .main-nav a.nav-contact {
+    min-height: 2.25rem;
+    padding-inline: 0.72rem;
+  }
+
+  .home-page-body .hero {
+    padding-top: clamp(7rem, 18svh, 8.5rem);
+  }
+
+  .home-page-body .hero h1 {
+    font-size: clamp(2.65rem, 16.5vw, 4.35rem);
+    line-height: 0.98;
+  }
+
+  .home-page-body .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: min(100%, 21rem);
+    margin-top: clamp(1.15rem, 4vw, 1.75rem);
+  }
+
+  .home-page-body .hero-primary-button,
+  .home-page-body .hero-outline-button {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .section-heading h1,
+  .subsidiaries h1,
+  .about-page-copy h1,
+  .contact-hero h1,
+  .subsidiary-copy h1,
+  .executive-profile-copy h1 {
+    overflow-wrap: anywhere;
+  }
+
+  .carousel-item {
+    width: min(88vw, 315px);
+  }
+}
+
+@media (max-width: 380px) {
+  body > header .main-nav a,
+  .home-page-body header .main-nav a {
+    padding-inline: 0.55rem;
+    font-size: 0.62rem;
+  }
+
+  .home-page-body .hero h1 {
+    font-size: clamp(2.45rem, 17vw, 3.8rem);
+  }
+
+  .carousel-item {
+    width: min(90vw, 292px);
+  }
+
+  .card-content p {
+    font-size: 0.9rem;
+  }
+}
+
+.home-page-body .hero.scroll-stage,
+.home-page-body .hero.scroll-stage.is-visible,
+.home-page-body .hero.scroll-stage.is-past {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+.home-page-body .hero h1,
+.home-page-body .hero-brand {
+  animation: none !important;
+  filter: none !important;
+  text-shadow: 0 12px 32px rgba(0, 0, 0, 0.72);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+}
+
+.home-page-body .hero-actions,
+.home-page-body .hero-actions * {
+  opacity: 1 !important;
+  filter: none !important;
+}
+
+.home-page-body .hero-primary-button {
+  background: #A40000 !important;
+  color: #ffffff !important;
+  border-color: #A40000 !important;
+}
+
+.home-page-body .hero-outline-button {
+  background: rgba(0, 0, 0, 0.34) !important;
+  color: #ffffff !important;
+  border-color: #A40000 !important;
 }
 
