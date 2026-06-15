@@ -54,8 +54,68 @@ if (header) {
   }, { passive: true });
 }
 
+const homePage = document.body.classList.contains('home-page-body');
+
+if (homePage) {
+  const progressBar = document.querySelector('.homepage-scroll-progress span');
+  const scrollDots = Array.from(document.querySelectorAll('.homepage-scroll-dots a'));
+  const dynamicSections = scrollDots
+    .map((dot) => document.querySelector(dot.getAttribute('href')))
+    .filter(Boolean);
+  const heroBackdrop = document.querySelector('.home-page-body .hero-backdrop');
+  const overviewInner = document.querySelector('.group-overview-inner');
+  let scrollTicking = false;
+
+  const updateDynamicScroll = () => {
+    const maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+    const progress = Math.min(1, Math.max(0, window.scrollY / maxScroll));
+
+    if (progressBar) {
+      progressBar.style.setProperty('--scroll-progress', progress.toFixed(4));
+    }
+
+    if (!prefersReducedMotion) {
+      const heroShift = Math.min(80, window.scrollY * 0.08);
+      const overviewRect = overviewInner?.getBoundingClientRect();
+      const overviewShift = overviewRect
+        ? Math.max(-28, Math.min(28, (overviewRect.top - window.innerHeight * 0.48) * -0.035))
+        : 0;
+
+      heroBackdrop?.style.setProperty('--hero-scroll-shift', `${heroShift.toFixed(1)}px`);
+      overviewInner?.style.setProperty('--overview-scroll-shift', `${overviewShift.toFixed(1)}px`);
+    }
+
+    if (dynamicSections.length && scrollDots.length) {
+      const activeIndex = dynamicSections.reduce((closestIndex, section, index) => {
+        const distance = Math.abs(section.getBoundingClientRect().top - window.innerHeight * 0.28);
+        const closestSection = dynamicSections[closestIndex];
+        const closestDistance = Math.abs(closestSection.getBoundingClientRect().top - window.innerHeight * 0.28);
+        return distance < closestDistance ? index : closestIndex;
+      }, 0);
+
+      scrollDots.forEach((dot, index) => {
+        dot.classList.toggle('is-active', index === activeIndex);
+      });
+    }
+
+    scrollTicking = false;
+  };
+
+  const requestDynamicScrollUpdate = () => {
+    if (!scrollTicking) {
+      window.requestAnimationFrame(updateDynamicScroll);
+      scrollTicking = true;
+    }
+  };
+
+  updateDynamicScroll();
+  window.addEventListener('scroll', requestDynamicScrollUpdate, { passive: true });
+  window.addEventListener('resize', requestDynamicScrollUpdate);
+}
+
 const stageSelector = [
   '.hero',
+  '.group-overview',
   '.about-section',
   '.subsidiaries',
   '.subsidiary-hero',
