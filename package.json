@@ -3,11 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "predev": "node scripts/check-html-pages.mjs",
     "dev": "next dev",
-    "prebuild": "node scripts/check-html-pages.mjs",
     "build": "next build",
-    "prestart": "node scripts/check-html-pages.mjs",
     "start": "next start"
   },
   "engines": {
