@@ -80,11 +80,19 @@ export default function Subsidiaries() {
         >
           {subsidiaries.map((sub, idx) => (
             <Link href={sub.link} key={idx} className="premium-card">
-              <div className="premium-card-image">
+              <div className="card-image-wrapper">
                 <img src={sub.img} alt={sub.title} />
               </div>
-              <div className="premium-card-content">
-                <div className="premium-label">{sub.label}</div>
+              <div className="card-overlay"></div>
+              <div className="card-content">
+                <div className="premium-label" style={{ 
+                  textTransform: 'uppercase', 
+                  fontSize: '0.75rem', 
+                  letterSpacing: '2px', 
+                  color: 'var(--accent-red)', 
+                  marginBottom: '0.5rem',
+                  fontWeight: 600
+                }}>{sub.label}</div>
                 <h3>{sub.title}</h3>
                 <p>{sub.desc}</p>
               </div>
