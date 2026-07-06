@@ -32,16 +32,17 @@ img, svg, video, iframe {
 }
 
 @media (max-width: 768px) {
-  /* Enforce container constraints */
-  section, .hero, .contact-hero, .contact-container, .group-overview, .site-footer {
+  /* Enforce container constraints and side padding for a seamless feel */
+  main, section, .hero, .contact-hero, .contact-container, .group-overview, .site-footer, .about-page-hero, .subsidiary-hero, .executive-profile-page {
     width: 100% !important;
     max-width: 100vw !important;
     overflow-x: hidden !important;
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
   }
 
-  .home-page-body .hero {
+  /* Clear the navbar universally on the first section of every page */
+  main > section:first-of-type, .hero, .about-page-hero, .contact-hero, .subsidiary-hero, .executive-profile-page {
     padding-top: 14rem !important; /* Extra space for wrapped navbar */
   }
 
@@ -86,4 +87,4 @@ img, svg, video, iframe {
 `;
 
 fs.writeFileSync('public/style.css', css.trim() + '\n' + appendCSS);
-console.log('Mobile CSS rebuilt successfully.');
+console.log('Mobile CSS rebuilt globally successfully.');

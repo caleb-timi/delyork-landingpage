@@ -56,48 +56,48 @@ export default function About() {
         <p>Leadership across strategy, operations, industries, management, and global partnerships.</p>
       </div>
       <div className="leadership-grid">
-        <a className="leader-card" href="/executives/executive-linus-idahosa">
+        <Link className="leader-card" href="/executives/executive-linus-idahosa">
           <img src="/assets/images/linus-idahosa.png" alt="Linus Idahosa" />
           <div>
             <h3>Linus Idahosa</h3>
             <p>President & Founder</p><span className="profile-link">View profile</span>
           </div>
-        </a>
-        <a className="leader-card" href="/executives/executive-larisa-miller">
+        </Link>
+        <Link className="leader-card" href="/executives/executive-larisa-miller">
           <img src="/assets/images/larisa-miller.png" alt="Larisa B. Miller" />
           <div>
             <h3>Larisa B. Miller</h3>
             <p>Senior Vice-President</p><span className="profile-link">View profile</span>
           </div>
-        </a>
-        <a className="leader-card" href="/executives/executive-ayiri-oladunmoye">
+        </Link>
+        <Link className="leader-card" href="/executives/executive-ayiri-oladunmoye">
           <img src="/assets/images/ayiri-oladunmoye.png" alt="Ayiri Oladunmoye" />
           <div>
             <h3>Ayiri Oladunmoye</h3>
             <p>Management and Corporate Services</p><span className="profile-link">View profile</span>
           </div>
-        </a>
-        <a className="leader-card" href="/executives/executive-ikenna-oguike">
+        </Link>
+        <Link className="leader-card" href="/executives/executive-ikenna-oguike">
           <img src="/assets/images/ikenna-oguike.png" alt="Ikenna Oguike" />
           <div>
             <h3>Ikenna Oguike</h3>
             <p>Chief Operations Officer</p><span className="profile-link">View profile</span>
           </div>
-        </a>
-        <a className="leader-card" href="/executives/executive-frank-pastorino">
+        </Link>
+        <Link className="leader-card" href="/executives/executive-frank-pastorino">
           <img src="/assets/images/frank-pastorino.png" alt="Frank Pastorino" />
           <div>
             <h3>Frank Pastorino</h3>
             <p>Managing Director, Del-York Industries</p><span className="profile-link">View profile</span>
           </div>
-        </a>
-        <a className="leader-card" href="/executives/executive-evans-emmanuel">
+        </Link>
+        <Link className="leader-card" href="/executives/executive-evans-emmanuel">
           <img src="/assets/images/evans-emmanuel.png" alt="Evans Emmanuel" />
           <div>
             <h3>Evans Emmanuel</h3>
             <p>Head, LIFE Africa</p><span className="profile-link">View profile</span>
           </div>
-        </a>
+        </Link>
       </div>
     </section>
   

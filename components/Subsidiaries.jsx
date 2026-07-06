@@ -12,35 +12,35 @@ export default function Subsidiaries() {
       title: "Del-York Creative Academy",
       desc: "Premier incubator for cinematic excellence and digital media innovation, empowering storytellers with Hollywood-grade training and industry partnerships.",
       img: "/assets/images/dy-creative-academy-web.png",
-      link: "/html-pages/subsidiaries/creative-academy.html",
+      link: "/subsidiaries/creative-academy",
       label: "Creative"
     },
     {
       title: "LIFE Africa",
       desc: "Catalytic capital and impact intelligence for creative and vocational talent, helping trained people transition into income, enterprise, and verified outcomes.",
       img: "/assets/images/life-africa-program.png",
-      link: "/html-pages/subsidiaries/life-africa.html",
+      link: "/subsidiaries/life-africa",
       label: "Impact"
     },
     {
       title: "Del-York Communications",
       desc: "A leading creative agency delivering PR, strategic communications, branding, marketing, digital solutions, and media production.",
       img: "/assets/images/dy-comms-alt.png",
-      link: "/html-pages/subsidiaries/communications.html",
+      link: "/subsidiaries/communications",
       label: "Comms"
     },
     {
       title: "Del-York Technologies",
       desc: "Builds AI-driven platforms, enterprise software, smart ecosystems, immersive experiences, and digital solutions for industries and governments.",
       img: "/assets/images/dy-technologies-web.png",
-      link: "/html-pages/subsidiaries/technology.html",
+      link: "/subsidiaries/technology",
       label: "Technology"
     },
     {
       title: "Re-Skill Africa",
       desc: "An industrial talent and enterprise development platform using Skildustry, Skill Passport, and real production environments to build Africa's workforce.",
       img: "/assets/images/reskill-africa-workforce.jpeg",
-      link: "/html-pages/subsidiaries/reskill-africa.html",
+      link: "/subsidiaries/reskill-africa",
       label: "Skills"
     }
   ];

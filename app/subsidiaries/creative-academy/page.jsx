@@ -10,7 +10,7 @@ export default function Creativeacademy() {
         <h1>Pioneering creative education in Nigeria and across Africa.</h1>
         <p>Del-York Creative Academy develops Africa's next generation of creative professionals through cinematic training, digital media education, production skills, and industry-facing programs built for global careers.</p>
         <div className="subsidiary-actions">
-          <a href="/#subsidiaries" className="hero-link">Back to ecosystem</a>
+          <Link href="/#subsidiaries" className="hero-link">Back to ecosystem</Link>
           <a href="https://delyorkcreative.academy/" className="hero-link" target="_blank" rel="noopener">Visit Creative Academy</a>
         </div>
       </div>
@@ -43,7 +43,7 @@ export default function Creativeacademy() {
       <div className="video-showcase-grid">
         <article className="feature-video-card video-card-large">
           <div className="video-frame">
-            <iframe src="https://www.youtube-nocookie.com/embed/Wlj9msWBUKk" title="Del-York Creative Academy video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe src="https://www.youtube-nocookie.com/embed/Wlj9msWBUKk" title="Del-York Creative Academy video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
           </div>
           <div className="video-card-copy">
             <span>DCA Film</span>
@@ -53,7 +53,7 @@ export default function Creativeacademy() {
         </article>
         <article className="feature-video-card video-card-accent">
           <div className="video-frame">
-            <iframe src="https://www.youtube-nocookie.com/embed/rH2zH1qt-8o" title="YAPPI video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe src="https://www.youtube-nocookie.com/embed/rH2zH1qt-8o" title="YAPPI video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
           </div>
           <div className="video-card-copy">
             <span>YAPPI</span>
@@ -83,10 +83,10 @@ export default function Creativeacademy() {
       <div className="related-subsidiaries">
         <span className="section-kicker">Explore more</span>
         <div className="related-grid">
-          <a className="related-link" href="/subsidiaries/life-africa">LIFE Africa</a>
-          <a className="related-link" href="/subsidiaries/communications">Del-York Communications</a>
-          <a className="related-link" href="/subsidiaries/technology">Del-York Technologies</a>
-          <a className="related-link" href="/subsidiaries/reskill-africa">Re-Skill Africa</a>
+          <Link className="related-link" href="/subsidiaries/life-africa">LIFE Africa</Link>
+          <Link className="related-link" href="/subsidiaries/communications">Del-York Communications</Link>
+          <Link className="related-link" href="/subsidiaries/technology">Del-York Technologies</Link>
+          <Link className="related-link" href="/subsidiaries/reskill-africa">Re-Skill Africa</Link>
         </div>
       </div>
     </section>

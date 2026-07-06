@@ -58,18 +58,18 @@ export default function Contact() {
           <form className="premium-form">
             <div className="form-row">
               <div className="form-group">
-                <input type="text" id="name" name="name" required placeholder=" " />
+                <input type="text" id="name" name="name" required placeholder=" " autoComplete="name" />
                 <label htmlFor="name">Your Full Name</label>
                 <div className="input-line"></div>
               </div>
               <div className="form-group">
-                <input type="email" id="email" name="email" required placeholder=" " />
+                <input type="email" id="email" name="email" required placeholder=" " autoComplete="email" />
                 <label htmlFor="email">Email Address</label>
                 <div className="input-line"></div>
               </div>
             </div>
             <div className="form-group">
-              <input type="text" id="subject" name="subject" required placeholder=" " />
+              <input type="text" id="subject" name="subject" required placeholder=" " autoComplete="off" />
               <label htmlFor="subject">Subject</label>
               <div className="input-line"></div>
             </div>

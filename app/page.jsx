@@ -1,9 +1,23 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import Subsidiaries from '../components/Subsidiaries';
+
 export default function Home() {
   return (
     <main>
     <section className="hero" id="hero">
+      {/* Base Video Layer */}
+      <video 
+        src="/assets/images/glow.mp4" 
+        autoPlay 
+        loop 
+        muted 
+        playsInline
+        className="hero-bg-image"
+      />
+      
+      <div className="hero-gradient-overlay" aria-hidden="true"></div>
+      
       <div className="hero-signal-field" aria-hidden="true">
         <span></span>
         <span></span>
@@ -21,7 +35,7 @@ export default function Home() {
           <p className="hero-intro">Building the enterprises that move Africa forward through creative education, communications, technology, industrial skills, and impact ventures operating from Nigeria to the world.</p>
           <div className="hero-actions">
             <a href="#subsidiaries" className="cta-button hero-primary-button">Explore Del-York</a>
-            <a href="/html-pages/site/about.html" className="hero-outline-button">Who We Are</a>
+            <a href="/about" className="hero-outline-button">Who We Are</a>
           </div>
           <div className="hero-proof-row" aria-label="Del-York Group proof points">
             <article>

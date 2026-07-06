@@ -1,8 +1,4 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  outputFileTracingIncludes: {
-    "/*": ["./html-pages/**/*.html"]
-  }
-};
+const nextConfig = {};
 
 module.exports = nextConfig;

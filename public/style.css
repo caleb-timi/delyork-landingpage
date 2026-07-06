@@ -17,7 +17,7 @@
   --font-inter: 'Inter', sans-serif;
   --font-manrope: 'Oswald', sans-serif;
   --font-montserrat: 'Inter', sans-serif;
-  --about-dense-curves: url("data:image/svg+xml,%3Csvg width='1600' height='1120' viewBox='0 0 1600 1120' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23A40000' stroke-linecap='round'%3E%3Cpath opacity='.5' stroke-width='1.05' d='M-220 92C22 236 220 238 428 88C646-70 842-38 1030 132C1218 302 1396 318 1668 128'/%3E%3Cpath opacity='.42' stroke-width='.98' d='M-244 242C12 356 218 338 448 178C674 20 858 46 1062 232C1268 420 1438 428 1654 282'/%3E%3Cpath opacity='.38' stroke-width='.92' d='M-232 404C34 486 248 452 492 284C736 116 916 128 1126 326C1316 506 1482 548 1670 430'/%3E%3Cpath opacity='.34' stroke-width='.88' d='M-202 586C80 638 310 584 562 406C814 228 1004 222 1210 406C1384 562 1518 620 1664 552'/%3E%3Cpath opacity='.3' stroke-width='.84' d='M-150 768C144 782 384 706 632 534C890 356 1088 346 1288 514C1456 654 1574 708 1688 666'/%3E%3Cpath opacity='.26' stroke-width='.8' d='M-60 954C214 902 438 806 700 652C956 502 1148 488 1368 630C1518 726 1618 760 1700 730'/%3E%3Cpath opacity='.32' stroke-width='.86' d='M104 -180C294 24 302 218 150 396C8 562 50 724 272 862C442 968 526 1086 486 1280'/%3E%3Cpath opacity='.28' stroke-width='.82' d='M342 -190C492 30 470 238 292 416C126 582 164 746 390 878C566 982 642 1102 590 1288'/%3E%3Cpath opacity='.3' stroke-width='.84' d='M612 -184C480 46 526 248 734 410C940 570 966 740 806 938C686 1088 694 1206 846 1336'/%3E%3Cpath opacity='.27' stroke-width='.8' d='M854 -168C720 72 784 274 1010 418C1234 562 1270 720 1116 948C1026 1080 1042 1196 1198 1328'/%3E%3Cpath opacity='.24' stroke-width='.76' d='M1110 -172C1284 52 1256 250 1038 420C846 570 850 746 1052 916C1216 1054 1272 1170 1216 1308'/%3E%3Cpath opacity='.22' stroke-width='.74' d='M1360 -130C1514 70 1488 264 1298 424C1132 564 1128 738 1314 904C1460 1034 1514 1146 1472 1268'/%3E%3Cpath opacity='.2' stroke-width='.72' d='M-210 1048C-18 850 168 780 390 824C610 868 762 772 930 600C1118 406 1278 338 1518 378'/%3E%3Cpath opacity='.18' stroke-width='.7' d='M180 1118C250 896 382 750 594 716C804 682 894 520 1060 354C1214 200 1378 158 1618 228'/%3E%3C/g%3E%3C/svg%3E");
+  --about-dense-curves: none;
 }
 
 * {
@@ -8120,18 +8120,24 @@ body > header .main-nav a.nav-contact:hover,
 /* Dark Gradient Overlay for Text Readability */
 .card-overlay {
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.2) 50%, transparent 100%);
+  bottom: 0; left: 0; right: 0;
+  height: 320px; /* Tall enough for longest text, perfectly leveled across all cards */
+  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 70%, transparent 100%);
   z-index: 1;
 }
 
-.card-content {
+.premium-card .card-content {
   position: absolute;
   bottom: 0; left: 0; right: 0;
+  height: 320px; /* Identical height for all, tall enough to never hide text */
   padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Push all text to sit at the bottom edge */
   z-index: 2;
   transform: translateY(10px);
   transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.85)) !important; /* Restored film (darkened slightly at bottom for contrast) */
 }
 
 .premium-card:hover .card-content {
@@ -8425,4 +8431,82 @@ img, svg, video, iframe {
   .main-nav {
     flex-wrap: wrap !important;
   }
+}
+
+/* ==========================================================================
+   HERO NEXT/IMAGE UPGRADE
+   ========================================================================== */
+.hero {
+  background: transparent !important;
+}
+
+.hero-bg-image {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  z-index: 0 !important;
+  transform: scale(1.1) translate(2%, 2%) !important; /* Aggressively push bottom-right corner out of bounds */
+}
+
+/* Tablet: keep right side (skyline) visible but crop extreme right edge */
+@media (max-width: 1024px) {
+  .hero-bg-image {
+    object-position: 80% center !important;
+  }
+}
+
+/* Mobile: tighter right crop */
+@media (max-width: 768px) {
+  .hero-bg-image {
+    object-position: 75% center !important; /* Crop even more of the right edge on mobile */
+  }
+}
+
+.hero-gradient-overlay {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+  background: 
+    /* Legibility gradient: dark on left, transparent on right */
+    linear-gradient(90deg, rgba(13,13,13,0.9) 0%, rgba(13,13,13,0.6) 40%, rgba(13,13,13,0.2) 100%),
+    /* Watermark cover vignette in bottom right corner (MASSIVE) */
+    radial-gradient(ellipse at 100% 100%, #050505 0%, #050505 10%, rgba(5,5,5,0.9) 15%, transparent 35%),
+    /* Subtle red vignette in bottom left corner */
+    radial-gradient(circle at 10% 90%, rgba(164, 0, 0, 0.15) 0%, transparent 40%) !important;
+}
+
+.hero > *:not(.hero-bg-image):not(.hero-gradient-overlay):not(.building-glow-spot) {
+  position: relative !important;
+  z-index: 2 !important; /* Ensure text is above overlay */
+}
+
+/* ==========================================================================
+   GLOBAL BLOOM ANIMATIONS
+   ========================================================================== */
+.hero-bloom-layer {
+  /* Ensure object-fit/position identical to base layer happens via .hero-bg-image */
+  filter: blur(var(--bloom-blur)) brightness(var(--bloom-brightness)) contrast(var(--bloom-contrast)) !important;
+  mix-blend-mode: screen !important; /* lighten can be used if screen is too intense */
+  z-index: 1 !important; /* Above base image, below gradient overlay */
+  pointer-events: none !important;
+  animation: globalBloomPulse var(--bloom-duration) ease-in-out infinite alternate !important;
+  will-change: opacity !important;
+}
+
+@keyframes globalBloomPulse {
+  0% { 
+    opacity: var(--bloom-opacity-min, 0.5); 
+  }
+  100% { 
+    opacity: var(--bloom-opacity-max, 1.0); 
+  }
+}
+
+/* Remove glow for the Send Message button on contact page */
+.contact-form-wrapper .primary-btn:hover {
+  box-shadow: none !important;
 }
