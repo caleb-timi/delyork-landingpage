@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import ScrollReveal from '../../components/ScrollReveal';
+import ScrollReveal from '../../../components/ScrollReveal';
 
 export default function Creativeacademy() {
   return (
@@ -83,8 +83,8 @@ export default function Creativeacademy() {
           <div className="service-card"><h3>YAPPI</h3><p>A youth-focused animation and post-production initiative created with a strong emphasis on opportunity and inclusion.</p></div>
         </div>
       </div>
+    </section>
     </ScrollReveal>
-
     <ScrollReveal direction="right">
     <section className="subsidiary-section alt">
       <div className="related-subsidiaries">
