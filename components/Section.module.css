@@ -1,0 +1,46 @@
+.section {
+  position: relative;
+  width: 100%;
+}
+
+/* 
+  DARK VARIANT 
+  We set explicit dark colors here, but they can be inherited 
+  if the parent container or global styles already manage them.
+*/
+.dark {
+  background-color: var(--bg-dark, #0d0d0d);
+  color: var(--text-main, #ffffff);
+}
+
+/* 
+  LIGHT VARIANT (CARD STYLE)
+  Strict overrides to ensure text hierarchy and background match WCAG standards.
+  This is styled as a floating card resting on the dark backdrop.
+*/
+.light {
+  background-color: #fafafa !important;
+  color: #000000 !important;
+  border-radius: 48px;
+  width: 96%;
+  max-width: 1440px;
+  margin: 0 auto; /* Zero vertical space, completely tight to sections above/below */
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  overflow: hidden; /* Prevents inner content from spilling over the rounded corners */
+}
+
+/* Typography Overrides for Light Theme */
+.light :global(h1),
+.light :global(h2),
+.light :global(h3),
+.light :global(h4),
+.light :global(h5),
+.light :global(h6) {
+  color: #000000 !important;
+}
+
+.light :global(p),
+.light :global(span),
+.light :global(li) {
+  color: rgba(0, 0, 0, 0.7) !important;
+}

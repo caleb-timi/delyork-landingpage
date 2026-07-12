@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import ScrollReveal from '../../../components/ScrollReveal';
 
 export default function Executivelinusidahosa() {
   return (
@@ -6,6 +7,7 @@ export default function Executivelinusidahosa() {
       
     <section className="executive-profile-page">
       <a className="hero-link profile-back-link" href="/about">Back to about</a>
+    <ScrollReveal direction="left">
       <article className="executive-profile executive-profile-feature">
         <div className="executive-profile-image"><img src="/assets/images/profiles/linus-profile-desktop.png" alt="Linus Idahosa" /></div>
         <div className="executive-profile-copy">
@@ -17,7 +19,10 @@ export default function Executivelinusidahosa() {
           <p>Under his leadership, Del-York Group has signed landmark partnerships toward the development of Kebulania Lagos Film City. He has received awards for youth development, media excellence, and nation building, and has been hosted by African presidents and world leaders including the Queen of England.</p>
         </div>
       </article>
+    </ScrollReveal>
+    <ScrollReveal direction="right">
       <div className="profile-related"><a href="/executives/executive-larisa-miller">Larisa B. Miller</a><a href="/executives/executive-ayiri-oladunmoye">Ayiri Oladunmoye</a><a href="/executives/executive-ikenna-oguike">Ikenna Oguike</a><a href="/executives/executive-frank-pastorino">Frank Pastorino</a><a href="/executives/executive-evans-emmanuel">Evans Emmanuel</a></div>
+    </ScrollReveal>
     </section>
   
     </main>

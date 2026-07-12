@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import ScrollReveal from '../../components/ScrollReveal';
 
 export default function Contact() {
   return (
@@ -15,6 +16,7 @@ export default function Contact() {
 
     <section className="contact-container">
       <div className="contact-grid">
+        <ScrollReveal direction="left">
         <div className="contact-info-panel">
           <div className="info-group">
             <h3><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
@@ -52,7 +54,9 @@ export default function Contact() {
             </div>
           </div>
         </div>
+        </ScrollReveal>
 
+        <ScrollReveal direction="right">
         <div className="contact-form-wrapper glassmorphism">
           <h2>Send us a Message</h2>
           <form className="premium-form">
@@ -88,6 +92,7 @@ export default function Contact() {
             </button>
           </form>
         </div>
+        </ScrollReveal>
       </div>
     </section>
   

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import ScrollReveal from '../../../components/ScrollReveal';
 
 export default function Executivelarisamiller() {
   return (
@@ -6,6 +7,7 @@ export default function Executivelarisamiller() {
       
     <section className="executive-profile-page">
       <a className="hero-link profile-back-link" href="/about">Back to about</a>
+    <ScrollReveal direction="left">
       <article className="executive-profile executive-profile-feature">
         <div className="executive-profile-image"><img src="/assets/images/profiles/larisa-profile-desktop.png" alt="Larisa B. Miller" /></div>
         <div className="executive-profile-copy">
@@ -16,7 +18,10 @@ export default function Executivelarisamiller() {
           <p>Her work has focused on sustainable development, energy, agriculture, women, youth, literacy, and education. She has received numerous awards, including recognition among the Top 100 People in Finance, 100 Global Women of Excellence, and Top 10 Most Influential Friends to Africa.</p>
         </div>
       </article>
+    </ScrollReveal>
+    <ScrollReveal direction="right">
       <div className="profile-related"><a href="/executives/executive-linus-idahosa">Linus Idahosa</a><a href="/executives/executive-ayiri-oladunmoye">Ayiri Oladunmoye</a><a href="/executives/executive-ikenna-oguike">Ikenna Oguike</a><a href="/executives/executive-frank-pastorino">Frank Pastorino</a><a href="/executives/executive-evans-emmanuel">Evans Emmanuel</a></div>
+    </ScrollReveal>
     </section>
   
     </main>

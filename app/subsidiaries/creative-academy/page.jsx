@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import ScrollReveal from '../../components/ScrollReveal';
 
 export default function Creativeacademy() {
   return (
@@ -21,6 +22,7 @@ export default function Creativeacademy() {
       </div>
     </section>
 
+    <ScrollReveal direction="left">
     <section className="subsidiary-section alt">
       <div className="detail-grid">
         <div className="detail-heading">
@@ -33,7 +35,9 @@ export default function Creativeacademy() {
         </div>
       </div>
     </section>
+    </ScrollReveal>
 
+    <ScrollReveal direction="right">
     <section className="subsidiary-section creative-video-section">
       <div className="video-showcase-heading">
         <span className="section-kicker">Watch the story</span>
@@ -63,7 +67,9 @@ export default function Creativeacademy() {
         </article>
       </div>
     </section>
+    </ScrollReveal>
 
+    <ScrollReveal direction="left">
     <section className="subsidiary-section">
       <div className="detail-grid">
         <div className="detail-heading">
@@ -77,8 +83,9 @@ export default function Creativeacademy() {
           <div className="service-card"><h3>YAPPI</h3><p>A youth-focused animation and post-production initiative created with a strong emphasis on opportunity and inclusion.</p></div>
         </div>
       </div>
-    </section>
+    </ScrollReveal>
 
+    <ScrollReveal direction="right">
     <section className="subsidiary-section alt">
       <div className="related-subsidiaries">
         <span className="section-kicker">Explore more</span>
@@ -90,7 +97,8 @@ export default function Creativeacademy() {
         </div>
       </div>
     </section>
-  
+    </ScrollReveal>
+
     </main>
   );
 }

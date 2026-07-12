@@ -1,0 +1,66 @@
+.statTile {
+  background-color: #000000; /* Match the dark background */
+  padding: 6rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.statContainer {
+  max-width: 1000px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+  min-width: 200px;
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.statNumber {
+  font-family: 'Playfair Display', 'Times New Roman', serif; /* Serif font matching the design */
+  font-size: 4.5rem;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 1;
+  margin-bottom: 1.25rem;
+}
+
+.statLabel {
+  font-family: var(--font-inter, 'Inter', sans-serif);
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.statDivider {
+  width: 32px;
+  height: 2px;
+  background-color: #A40000; /* Red accent */
+}
+
+@media (max-width: 768px) {
+  .statContainer {
+    flex-direction: column;
+    gap: 4rem;
+  }
+}

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import ScrollReveal from '../../../components/ScrollReveal';
 
 export default function Global() {
   return (
@@ -17,12 +18,15 @@ export default function Global() {
         <div className="subsidiary-badge">Market Entry</div>
       </div>
     </section>
+    <ScrollReveal direction="left">
     <section className="subsidiary-section alt">
       <div className="detail-grid">
         <div className="detail-heading"><span className="section-kicker">What they do</span><h2>Strategy for businesses entering dynamic markets.</h2></div>
         <div className="detail-copy"><p>Headquartered in the United States with branches in Rwanda, Zambia, and Nigeria, Del-York Global supports clients with research, expansion planning, operating guidance, and growth strategy.</p><p>The company helps organizations understand market realities, reduce risk, and build stronger routes into Africa's business landscape.</p></div>
       </div>
     </section>
+    </ScrollReveal>
+    <ScrollReveal direction="right">
     <section className="subsidiary-section">
       <div className="detail-grid">
         <div className="detail-heading"><span className="section-kicker">Services</span><h2>From insight to establishment.</h2></div>
@@ -36,7 +40,10 @@ export default function Global() {
         </div>
       </div>
     </section>
+    </ScrollReveal>
+    <ScrollReveal direction="left">
     <section className="subsidiary-section alt"><div className="related-subsidiaries"><span className="section-kicker">Explore more</span><div className="related-grid"><a className="related-link" href="/subsidiaries/creative-academy">Creative Academy</a><a className="related-link" href="/archive/industries">Del-York Industries</a><a className="related-link" href="/subsidiaries/technology">Technologies</a><a className="related-link" href="/archive/development-company">Development Company</a><a className="related-link" href="/subsidiaries/communications">Communications</a></div></div></section>
+    </ScrollReveal>
   
     </main>
   );

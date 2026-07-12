@@ -4,8 +4,10 @@ import Link from 'next/link';
 
 export default function Subsidiaries() {
   const scrollRef = useRef(null);
+  const wrapperRef = useRef(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
+  const [isSectionVisible, setIsSectionVisible] = useState(false);
 
   const subsidiaries = [
     {
@@ -56,7 +58,24 @@ export default function Subsidiaries() {
   useEffect(() => {
     checkScroll();
     window.addEventListener('resize', checkScroll);
-    return () => window.removeEventListener('resize', checkScroll);
+    
+    // Intersection Observer for entrance animation
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setIsSectionVisible(true);
+        }
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+    );
+    if (wrapperRef.current) {
+      observer.observe(wrapperRef.current);
+    }
+
+    return () => {
+      window.removeEventListener('resize', checkScroll);
+      observer.disconnect();
+    };
   }, []);
 
   const scrollByAmount = (amount) => {
@@ -66,64 +85,66 @@ export default function Subsidiaries() {
   };
 
   return (
-    <section className="premium-subsidiaries" id="subsidiaries">
-      <div className="section-heading">
-        <span className="section-kicker">The ecosystem</span>
-        <h2>Our Subsidiaries</h2>
-      </div>
-
-      <div className="premium-carousel-wrapper">
-        <div 
-          className="premium-carousel-track" 
-          ref={scrollRef}
-          onScroll={checkScroll}
-        >
-          {subsidiaries.map((sub, idx) => (
-            <Link href={sub.link} key={idx} className="premium-card">
-              <div className="card-image-wrapper">
-                <img src={sub.img} alt={sub.title} />
-              </div>
-              <div className="card-overlay"></div>
-              <div className="card-content">
-                <div className="premium-label" style={{ 
-                  textTransform: 'uppercase', 
-                  fontSize: '0.75rem', 
-                  letterSpacing: '2px', 
-                  color: 'var(--accent-red)', 
-                  marginBottom: '0.5rem',
-                  fontWeight: 600
-                }}>{sub.label}</div>
-                <h3>{sub.title}</h3>
-                <p>{sub.desc}</p>
-              </div>
-            </Link>
-          ))}
+    <section className={`premium-subsidiaries ${isSectionVisible ? 'sub-visible' : ''}`} id="subsidiaries" ref={wrapperRef}>
+      <div className="sub-entrance">
+        <div className="section-heading">
+          <span className="section-kicker">The ecosystem</span>
+          <h2>Our Subsidiaries</h2>
         </div>
-        
-        {/* Navigation Arrows */}
-        <div className="carousel-nav">
-          <button 
-            className={`nav-btn prev ${!canScrollLeft ? 'disabled' : ''}`}
-            onClick={() => scrollByAmount(-400)}
-            disabled={!canScrollLeft}
-            aria-label="Previous"
+
+        <div className="premium-carousel-wrapper">
+          <div 
+            className="premium-carousel-track" 
+            ref={scrollRef}
+            onScroll={checkScroll}
           >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <line x1="19" y1="12" x2="5" y2="12"></line>
-              <polyline points="12 19 5 12 12 5"></polyline>
-            </svg>
-          </button>
-          <button 
-            className={`nav-btn next ${!canScrollRight ? 'disabled' : ''}`}
-            onClick={() => scrollByAmount(400)}
-            disabled={!canScrollRight}
-            aria-label="Next"
-          >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </button>
+            {subsidiaries.map((sub, idx) => (
+              <Link href={sub.link} key={idx} className="premium-card">
+                <div className="card-image-wrapper">
+                  <img src={sub.img} alt={sub.title} />
+                </div>
+                <div className="card-overlay"></div>
+                <div className="card-content">
+                  <div className="premium-label" style={{ 
+                    textTransform: 'uppercase', 
+                    fontSize: '0.75rem', 
+                    letterSpacing: '2px', 
+                    color: 'var(--accent-red)', 
+                    marginBottom: '0.5rem',
+                    fontWeight: 600
+                  }}>{sub.label}</div>
+                  <h3>{sub.title}</h3>
+                  <p>{sub.desc}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+          
+          {/* Navigation Arrows */}
+          <div className="carousel-nav">
+            <button 
+              className={`nav-btn prev ${!canScrollLeft ? 'disabled' : ''}`}
+              onClick={() => scrollByAmount(-400)}
+              disabled={!canScrollLeft}
+              aria-label="Previous"
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+              </svg>
+            </button>
+            <button 
+              className={`nav-btn next ${!canScrollRight ? 'disabled' : ''}`}
+              onClick={() => scrollByAmount(400)}
+              disabled={!canScrollRight}
+              aria-label="Next"
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </section>

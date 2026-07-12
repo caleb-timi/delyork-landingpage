@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import ScrollReveal from '../../../components/ScrollReveal';
 
 export default function Executiveikennaoguike() {
   return (
@@ -6,6 +7,7 @@ export default function Executiveikennaoguike() {
       
     <section className="executive-profile-page">
       <a className="hero-link profile-back-link" href="/about">Back to about</a>
+    <ScrollReveal direction="left">
       <article className="executive-profile executive-profile-feature">
         <div className="executive-profile-image"><img src="/assets/images/profiles/ikenna-profile-desktop.png" alt="Ikenna Oguike" /></div>
         <div className="executive-profile-copy">
@@ -17,7 +19,10 @@ export default function Executiveikennaoguike() {
           <p>Ikenna led the acquisition of Afam Power Plant Plc and Afam Three Fast Power through the Unicorn Power Generation consortium, and mentors Nigerian start-ups through his accelerator program.</p>
         </div>
       </article>
+    </ScrollReveal>
+    <ScrollReveal direction="right">
       <div className="profile-related"><a href="/executives/executive-linus-idahosa">Linus Idahosa</a><a href="/executives/executive-larisa-miller">Larisa B. Miller</a><a href="/executives/executive-ayiri-oladunmoye">Ayiri Oladunmoye</a><a href="/executives/executive-frank-pastorino">Frank Pastorino</a><a href="/executives/executive-evans-emmanuel">Evans Emmanuel</a></div>
+    </ScrollReveal>
     </section>
   
     </main>

@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import Subsidiaries from '../components/Subsidiaries';
+import GroupOverview from '../components/GroupOverview';
+import StatTile from '../components/StatTile';
 
 export default function Home() {
   return (
@@ -32,50 +34,27 @@ export default function Home() {
             <span>Lagos built. Globally connected.</span>
           </p>
           <h1 className="hero-brand">Del-York Group</h1>
-          <p className="hero-intro">Building the enterprises that move Africa forward through creative education, communications, technology, industrial skills, and impact ventures operating from Nigeria to the world.</p>
+          <p className="hero-intro">Building the enterprises that move Africa forward — through creative education, communications, technology, and impact ventures.</p>
           <div className="hero-actions">
-            <a href="#subsidiaries" className="cta-button hero-primary-button">Explore Del-York</a>
+            <a href="#subsidiaries" className="cta-button hero-primary-button">
+              <span>Explore Del-York</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M5 12h14" />
+                <path d="M12 5l7 7-7 7" />
+              </svg>
+            </a>
             <a href="/about" className="hero-outline-button">Who We Are</a>
           </div>
-          <div className="hero-proof-row" aria-label="Del-York Group proof points">
-            <article>
-              <strong>5</strong>
-              <span>Subsidiaries</span>
-            </article>
-            <article>
-              <strong>Africa</strong>
-              <span>Talent, industry, and culture</span>
-            </article>
-            <article>
-              <strong>Lagos</strong>
-              <span>Corporate base with global reach</span>
-            </article>
-          </div>
         </div>
       </div>
+
+      {/* Bottom fade to next section */}
+      <div className="hero-bottom-fade" aria-hidden="true"></div>
     </section>
 
-    <section className="group-overview" id="group-overview" aria-labelledby="group-overview-title">
-      <div className="group-overview-inner">
-        <div className="group-overview-copy">
-          <h2 id="group-overview-title">An ecosystem for Africa's creative, technological, and industrial future.</h2>
-        </div>
-        <div className="group-overview-pillars" aria-label="Del-York Group pillars">
-          <article>
-            <h3>Create</h3>
-            <p>Training, media, storytelling, communications, and cultural infrastructure built for global standards.</p>
-          </article>
-          <article>
-            <h3>Build</h3>
-            <p>Technology, enterprise systems, talent pipelines, and production capacity for modern industries.</p>
-          </article>
-          <article>
-            <h3>Scale</h3>
-            <p>Impact capital, partnerships, and platforms that move proven ideas into sustainable markets.</p>
-          </article>
-        </div>
-      </div>
-    </section>
+    <StatTile />
+
+    <GroupOverview />
 
     <Subsidiaries />
   </main>

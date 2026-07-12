@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import ScrollReveal from '../../components/ScrollReveal';
 
 export default function About() {
   return (
@@ -16,6 +17,7 @@ export default function About() {
       </div>
     </section>
 
+    <ScrollReveal direction="left">
     <section className="about-story-section">
       <div className="detail-grid">
         <div className="detail-heading">
@@ -32,7 +34,9 @@ export default function About() {
         </div>
       </div>
     </section>
+    </ScrollReveal>
 
+    <ScrollReveal direction="right">
     <section className="about-pillars-section">
       <div className="about-pillars-grid">
         <article className="about-pillar">
@@ -48,7 +52,9 @@ export default function About() {
         </article>
       </div>
     </section>
+    </ScrollReveal>
 
+    <ScrollReveal direction="left">
     <section className="about-leadership-section">
       <div className="section-heading">
         <span className="section-kicker">Executive team</span>
@@ -100,6 +106,7 @@ export default function About() {
         </Link>
       </div>
     </section>
+    </ScrollReveal>
   
     </main>
   );
